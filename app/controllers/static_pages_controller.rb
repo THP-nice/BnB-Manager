@@ -12,10 +12,6 @@ class StaticPagesController < ApplicationController
 
   end
 
-  def customers_reviews
-
-  end
-
   def services
 
   end
