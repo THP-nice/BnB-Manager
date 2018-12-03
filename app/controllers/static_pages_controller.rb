@@ -15,5 +15,17 @@ class StaticPagesController < ApplicationController
   def services
 
   end
+
+  def prices
+
+  end
+
+  def packs
+
+  end
+
+  def faq
+
+  end
     
 end
