@@ -1,18 +1,36 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>BnBManager</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html dir="ltr" lang="en-US">
+	<head>
+		<title><%= yield :title %></title>
+		<%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="author" content="SemiColonWeb" />
 
-  <body>
-    <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+		<!-- Stylesheets
+		============================================= -->
+		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400i,700%7CMontserrat:300,400,500,600,700%7CMerriweather:300,400,300i,400i" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">	
+		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
 
-  </body>
+	<body class="stretched">
+
+		<!-- Document Wrapper
+		============================================= -->
+		<div id="wrapper" class="clearfix">
+
+			<%= render 'layouts/login_modal', resource: User.new, resource_name: :user, devise_mapping: Devise.mappings[:user] %>
+			<%= render 'layouts/header' %>
+
+			<%= yield %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+			<%= render 'layouts/footer' %>
+
+		</div><!-- #wrapper end -->
+		<%= javascript_include_tag 'application' %>
+	</body>
 </html>
