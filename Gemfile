@@ -30,8 +30,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'azure-storage', require: false
 # Mailer
 gem 'gibbon'
+# For asset pipeline
 gem 'nprogress-rails'
-
+# Stripe
+gem 'stripe'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
