@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :charges
 
   devise_for :users
 
@@ -11,5 +12,5 @@ Rails.application.routes.draw do
   get 'packs', to: "static_pages#packs"
   get 'faq', to: "static_pages#faq"
   post '/home', to: "static_pages#home"
-  
+
 end
