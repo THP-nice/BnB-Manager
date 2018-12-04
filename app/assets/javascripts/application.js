@@ -12,7 +12,8 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
+//= require nprogress
+//= require nprogress-turbolinks
 //= require template/jquery
 //= require template/plugins
 //= require template/functions
