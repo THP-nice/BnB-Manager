@@ -30,18 +30,18 @@ class StaticPagesController < ApplicationController
 
   def subscribe
     # Requête Mailer
-    @list_id = Rails.application.credentials.dig(:listid)
+    @list_id = Rails.application.credentials.dig(:gibbonlistid)
     gibbon = Gibbon::Request.new
 
      gibbon.lists(@list_id).members.create(
        body: {
          email_address: params[:email][:address],
-         status: "subscribed"
+         status: "Inscris"
        }
      )
 
      respond_to do |format|
-       format.json{render :json => { :message => "You have been Successfully added to the list! :)" }}
+       format.json{render :json => { :message => "Email envoyé !" }}
          end
    end
 
