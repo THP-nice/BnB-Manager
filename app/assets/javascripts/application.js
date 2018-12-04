@@ -16,4 +16,5 @@
 //= require template/jquery
 //= require template/plugins
 //= require template/functions
+//= require autocomplete
 //= require_tree .
