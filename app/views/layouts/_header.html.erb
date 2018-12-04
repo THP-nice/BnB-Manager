@@ -22,58 +22,27 @@
           <ul>
             <li><a href="/"><div>Accueil</div></a>
             <li><a href="/services"><div>Services</div></a></li>
-            <li><a href="/prices"><div>Nos Tarifs</div></a></li>
-            <li><a href="/packs"><div>Nos Packs</div></a></li>
+            <li><a href="/prices"><i class="fas fa-caret-down" style="top: 2px"></i>Tarifs</a>
+              <ul>
+                <li><a href="/packs"><div>Nos Packs</div></a></li>
+                <li><a href="/prices"><div>A la carte</div></a></li>
+              </ul>
+            </li>
             <li><a href="/faq"><div>FAQ</div></a></li>
             <li><a href="/about"><div>A Propos</div></a></li>
             <li><a href="/contact"><div>Contact</div></a></li>
+            <% if user_signed_in? %>
+              <li><%= link_to current_user.first_name, edit_user_registration_path, class: "navbar-link" %>
+                <ul>
+                  <li><%= link_to "Editer mon profil", edit_user_registration_path, class:"navbar-item" %></li>
+                  <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class:"navbar-item" %></li>
+                </ul>
+              </li>
+            <% else %>
+              <li><%= link_to 'S\'inscrire', new_user_registration_path %></li>
+              <li><a href="#modal-register" data-lightbox="inline" ><i class="icon-line2-user mr-1 position-relative" style="padding-right: 20px;"></i>Se connecter</span></a></li>
+            <% end %>
           </ul>
-
-          <!-- Top Cart
-          ============================================= -->
-          <div id="top-cart">
-            <a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span>5</span></a>
-            <div class="top-cart-content">
-              <div class="top-cart-title">
-                <h4>Shopping Cart</h4>
-              </div>
-              <div class="top-cart-items">
-                <div class="top-cart-item clearfix">
-                  <div class="top-cart-item-image">
-                    <a href="#"><img src="images/shop/small/1.jpg" alt="Blue Round-Neck Tshirt" /></a>
-                  </div>
-                  <div class="top-cart-item-desc">
-                    <a href="#">Blue Round-Neck Tshirt</a>
-                    <span class="top-cart-item-price">$19.99</span>
-                    <span class="top-cart-item-quantity">x 2</span>
-                  </div>
-                </div>
-                <div class="top-cart-item clearfix">
-                  <div class="top-cart-item-image">
-                    <a href="#"><img src="images/shop/small/6.jpg" alt="Light Blue Denim Dress" /></a>
-                  </div>
-                  <div class="top-cart-item-desc">
-                    <a href="#">Light Blue Denim Dress</a>
-                    <span class="top-cart-item-price">$24.99</span>
-                    <span class="top-cart-item-quantity">x 3</span>
-                  </div>
-                </div>
-              </div>
-              <div class="top-cart-action clearfix">
-                <span class="fleft top-checkout-price">$114.95</span>
-                <button class="button button-3d button-small nomargin fright">View Cart</button>
-              </div>
-            </div>
-          </div><!-- #top-cart end -->
-
-          <!-- Top Search
-          ============================================= -->
-          <div id="top-search">
-            <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
-            <form action="search.html" method="get">
-              <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
-            </form>
-          </div><!-- #top-search end -->
 
         </nav><!-- #primary-menu end -->
 
