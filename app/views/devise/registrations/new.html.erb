@@ -1,15 +1,19 @@
-<h2>Sign up</h2>
+<% content_for :title do %>
+  Inscription | BnB Manager
+<% end %>
+
+<h2>Inscription</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :nom %><br />
+    <%= f.label :prénom %><br />
     <%= f.text_field :first_name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :prénom %><br />
+    <%= f.label :nom %><br />
     <%= f.text_field :last_name %>
   </div>
 
@@ -29,7 +33,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :mot_de_passe %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> caractères minimum)</em>
     <% end %><br />
@@ -37,7 +41,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :confirmation_de_mot_de_passe %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 

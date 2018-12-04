@@ -1,0 +1,55 @@
+<% if current_page?(root_path) %>
+
+  <header id="header" class="transparent-header dark">
+
+    <div id="header-wrap">
+
+      <div class="container clearfix">
+
+        <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+        <!-- Logo
+        ============================================= -->
+        <div id="logo">
+          <a href="/" class="standard-logo"><%= image_tag  "bnb-logo.png", alt: "BnB Manager Logo" %></a>
+          <a href="/" class="retina-logo"><%= image_tag  "bnb-logo@2x.png", alt: "BnB Manager Logo" %></a>
+        </div><!-- #logo end -->
+
+        <!-- Primary Navigation
+        ============================================= -->
+        <nav id="primary-menu">
+
+          <ul>
+            <li><a href="/"><div>Accueil</div></a>
+            <li><a href="/services"><div>Services</div></a></li>
+            <li><a href="/prices"><i class="fas fa-caret-down" style="top: 2px"></i>Tarifs</a>
+              <ul>
+                <li><a href="/packs"><div>Nos Packs</div></a></li>
+                <li><a href="/prices"><div>A la carte</div></a></li>
+              </ul>
+            </li>
+            <li><a href="/faq"><div>FAQ</div></a></li>
+            <li><a href="/about"><div>A Propos</div></a></li>
+            <li><a href="/contact"><div>Contact</div></a></li>
+            <% if user_signed_in? %>
+              <li><%= link_to current_user.first_name, edit_user_registration_path, class: "navbar-link" %>
+                <ul>
+                  <li><%= link_to "Editer mon profil", edit_user_registration_path, class:"navbar-item" %></li>
+                  <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class:"navbar-item" %></li>
+                </ul>
+              </li>
+            <% else %>
+              <li><%= link_to 'S\'inscrire', new_user_registration_path %></li>
+              <li><a href="#modal-register" data-lightbox="inline" ><i class="icon-line2-user mr-1 position-relative" style="padding-right: 20px;"></i>Se connecter</span></a></li>
+            <% end %>
+          </ul>
+
+        </nav><!-- #primary-menu end -->
+
+      </div>
+
+    </div>
+
+  </header><!-- #header end -->
+
+<% end %>
