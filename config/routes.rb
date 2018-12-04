@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-
-
   devise_for :users
 
   root 'static_pages#home'
@@ -11,6 +9,6 @@ Rails.application.routes.draw do
   get 'prices', to: "static_pages#prices"
   get 'packs', to: "static_pages#packs"
   get 'faq', to: "static_pages#faq"
-  post '/home', to: "static_pages#home"
+  post '/subscribe', to: "static_pages#subscribe"
 
 end
