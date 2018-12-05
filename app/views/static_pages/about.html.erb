@@ -1,9 +1,20 @@
+<% content_for :title do %>
+  A Propos | BnB Manager
+<% end %>
+
 <section id="content">
 
       <div class="content-wrap">
 
         <div class="container clearfix">
+          <div class="heading-block center">
+            <h1 class="about-title">A Propos</h1>
+          </div>
 
+          <div class="container clearfix">
+          <div class="heading-block center">
+            <h4>Notre Entreprise</h1>
+          </div>
           <div class="col_one_third">
 
             <div class="heading-block fancy-title nobottomborder title-bottom-border">
@@ -36,35 +47,9 @@
 
         </div>
 
-        <div class="section nomargin">
-          <div class="container clearfix">
-
-            <div class="col_one_fourth nobottommargin center" data-animate="bounceIn">
-              <i class="i-plain i-xlarge divcenter icon-line2-directions"></i>
-              <div class="counter counter-lined"><span data-from="100" data-to="846" data-refresh-interval="50" data-speed="2000"></span>K+</div>
-              <h5>Lines of Codes</h5>
-            </div>
-
-            <div class="col_one_fourth nobottommargin center" data-animate="bounceIn" data-delay="200">
-              <i class="i-plain i-xlarge divcenter nobottommargin icon-line2-graph"></i>
-              <div class="counter counter-lined"><span data-from="3000" data-to="15360" data-refresh-interval="100" data-speed="2500"></span>+</div>
-              <h5>KBs of HTML Files</h5>
-            </div>
-
-            <div class="col_one_fourth nobottommargin center" data-animate="bounceIn" data-delay="400">
-              <i class="i-plain i-xlarge divcenter nobottommargin icon-line2-layers"></i>
-              <div class="counter counter-lined"><span data-from="10" data-to="408" data-refresh-interval="25" data-speed="3500"></span>*</div>
-              <h5>No. of Templates</h5>
-            </div>
-
-            <div class="col_one_fourth nobottommargin center col_last" data-animate="bounceIn" data-delay="600">
-              <i class="i-plain i-xlarge divcenter nobottommargin icon-line2-clock"></i>
-              <div class="counter counter-lined"><span data-from="60" data-to="1200" data-refresh-interval="30" data-speed="2700"></span>+</div>
-              <h5>Hours of Coding</h5>
-            </div>
-
+        <div class="heading-block center">
+            <h4>Notre Equipe</h4>
           </div>
-        </div>
 
         <div class="row justify-content-center">
             <div class="col-xs-12 col-sm-6 col-md-4">
@@ -252,66 +237,17 @@
           <ul class="clients-grid grid-6 nobottommargin clearfix">
             <li><a href="http://logofury.com/logo/enzo.html"><%= image_tag("clients/1.png", alt: "Clients") %></a></li>
             <li><a href="http://logofury.com"><%= image_tag("clients/2.png", alt: "Clients") %></a></li>
-            <li><a href="http://logofaves.com/2014/03/grabbt/"><img src="clients/3.png" alt="Clients"></a></li>
-            <li><a href="http://logofaves.com/2014/01/ladera-granola/"><img src="clients/4.png" alt="Clients"></a></li>
-            <li><a href="http://logofaves.com/2014/02/hershel-farms/"><img src="clients/5.png" alt="Clients"></a></li>
-            <li><a href="http://logofury.com/logo/food-fight-radio.html"><img src="clients/6.png" alt="Clients"></a></li>
-            <li><a href="http://logofury.com"><img src="clients/7.png" alt="Clients"></a></li>
-            <li><a href="http://logofury.com/logo/up-travel.html"><img src="images/clients/8.png" alt="Clients"></a></li>
-            <li><a href="http://logofury.com/logo/caffi-bardi.html"><img src="clients/9.png" alt="Clients"></a></li>
-            <li><a href="http://logofury.com/logo/bignix-design.html"><img src="clients/10.png" alt="Clients"></a></li>
-            <li><a href="http://logofury.com/"><img src="clients/11.png" alt="Clients"></a></li>
-            <li><a href="http://logofury.com/"><img src="clients/12.png" alt="Clients"></a></li>
+            <li><a href="http://logofaves.com/2014/03/grabbt/"><%= image_tag("clients/3.png", alt: "Clients") %></a></li>
+            <li><a href="http://logofaves.com/2014/01/ladera-granola/"><%= image_tag("clients/4.png", alt: "Clients") %></a></li>
+            <li><a href="http://logofaves.com/2014/02/hershel-farms/"><%= image_tag("clients/5.png", alt: "Clients") %></a></li>
+            <li><a href="http://logofury.com/logo/food-fight-radio.html"><%= image_tag("clients/6.png", alt: "Clients") %></a></li>
+            <li><a href="http://logofury.com"><%= image_tag("clients/7.png", alt: "Clients") %></a></li>
+            <li><a href="http://logofury.com/logo/up-travel.html"><%= image_tag("clients/8.png", alt: "Clients") %></a></li>
+            <li><a href="http://logofury.com/logo/caffi-bardi.html"><%= image_tag("clients/9.png", alt: "Clients") %></a></li>
+            <li><a href="http://logofury.com/logo/bignix-design.html"><%= image_tag("clients/10.png", alt: "Clients") %></a></li>
+            <li><a href="http://logofury.com/"><%= image_tag("clients/11.png", alt: "Clients") %></a></li>
+            <li><a href="http://logofury.com/"><%= image_tag("clients/12.png", alt: "Clients") %></a></li>
           </ul>
-
-        </div>
-
-        <div class="section footer-stick">
-
-          <h4 class="uppercase center">Témoignages de nos<span>Clients</span></h4>
-
-          <div class="fslider testimonial testimonial-full" data-animation="fade" data-arrows="false">
-            <div class="flexslider">
-              <div class="slider-wrap">
-                <div class="slide">
-                  <div class="testi-image">
-                    <a href="#"><img src="testimonials/3.jpg" alt="Customer Testimonails"></a>
-                  </div>
-                  <div class="testi-content">
-                    <p>Similique fugit repellendus expedita excepturi iure perferendis provident quia eaque. Repellendus, vero numquam?</p>
-                    <div class="testi-meta">
-                      Steve Jobs
-                      <span>Apple Inc.</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="slide">
-                  <div class="testi-image">
-                    <a href="#"><img src="testimonials/2.jpg" alt="Customer Testimonails"></a>
-                  </div>
-                  <div class="testi-content">
-                    <p>Natus voluptatum enim quod necessitatibus quis expedita harum provident eos obcaecati id culpa corporis molestias.</p>
-                    <div class="testi-meta">
-                      Collis Ta'eed
-                      <span>Envato Inc.</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="slide">
-                  <div class="testi-image">
-                    <a href="#"><img src="testimonials/1.jpg" alt="Customer Testimonails"></a>
-                  </div>
-                  <div class="testi-content">
-                    <p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
-                    <div class="testi-meta">
-                      John Doe
-                      <span>XYZ Inc.</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
         </div>
 
