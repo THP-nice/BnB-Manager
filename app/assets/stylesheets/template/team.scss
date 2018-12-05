@@ -2,7 +2,29 @@
   #team {
     background: #f9f9f9 !important;
   }
+
+  h1.heading-block.center.title-page {
+    color: black;
+    margin-bottom: 30px;
+  }
+
+  h3.heading-block.center {
+    margin-bottom: 30px;
+  }
+  heading-block center team-title
+  /*
+  h1.section-title {
+    margin-bottom: 50px;
+    text-align: center;
+    color: black;
+  }  
   
+  h4.section-title {
+    text-align: center;
+    color: red;
+  }
+  */
+
   .btn-primary:hover,
   .btn-primary:focus {
     background-color: #00d1b2;
@@ -18,15 +40,15 @@
   }
   
   section {
-    padding: 60px 0;
+    padding: 10px 0;
   }
   
-  section .section-title {
+  /*section .section-title {
     text-align: center;
-    color: #00d1b2;
-    margin-bottom: 35px;
-    text-transform: uppercase;
-  }
+    color: black;
+    margin-bottom: 40px;
+
+  } */
   
   #team .card {
     border: none;
