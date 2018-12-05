@@ -1,6 +1,8 @@
 <% if current_page?(root_path) %>
-
   <header id="header" class="transparent-header dark">
+<% else %>
+  <header id="header" class="dark">
+<% end %>
 
     <div id="header-wrap">
 
@@ -51,5 +53,3 @@
     </div>
 
   </header><!-- #header end -->
-
-<% end %>
