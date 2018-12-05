@@ -11,6 +11,5 @@ Rails.application.routes.draw do
   get 'prices', to: "static_pages#prices"
   get 'packs', to: "static_pages#packs"
   get 'faq', to: "static_pages#faq"
-  post '/subscribe', to: "static_pages#subscribe"
 
 end
