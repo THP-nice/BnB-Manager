@@ -33,16 +33,16 @@ class StaticPagesController < ApplicationController
     @list_id = Rails.application.credentials.dig(:gibbonlistid)
     gibbon = Gibbon::Request.new
 
-     gibbon.lists(@list_id).members.create(
-       body: {
-         email_address: params[:email][:address],
-         status: "Inscris"
-       }
-     )
+    gibbon.lists(@list_id).members.create(
+      body: {
+        email_address: params[:email][:address],
+        status: "Inscris"
+      }
+    )
 
-     respond_to do |format|
-       format.json{render :json => { :message => "Email envoyé !" }}
-         end
-   end
+    respond_to do |format|
+      format.json{render :json => { :message => "Email envoyé !" }}
+    end
+  end
 
 end
