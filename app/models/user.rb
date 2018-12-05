@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   def subscribe
     @list_id = Rails.application.credentials.dig(:gibbonlistid)
-    gibbon = Gibbon::Request.new(Rails.application.credentials.dig(:gibbonapi))
+    gibbon = Gibbon::Request.new
 
      gibbon.lists(@list_id).members.create(
        body: {
