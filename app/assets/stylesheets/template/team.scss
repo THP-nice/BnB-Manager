@@ -1,18 +1,34 @@
 .footer-section {
   #team {
-    background: #eee !important;
+    background: #f9f9f9 !important;
+  }
+
+  h1.heading-block.center.title-page {
+    color: black;
+    margin-bottom: 30px;
+  }
+
+  h3.heading-block.center {
+    margin-bottom: 30px;
+    margin-top: -25px;
   }
   
+  h3.heading-block.center.partners-title {
+    margin-top: 30px;
+    margin-bottom: 25px;
+  }
+
   .btn-primary:hover,
   .btn-primary:focus {
-    background-color: #108d6f;
-    border-color: #108d6f;
+    background-color: #00d1b2;
+    border-color: #00d1b2;
     box-shadow: none;
     outline: none;
   }
   
   .btn-primary {
     color: #fff;
+<<<<<<< HEAD
     background-color: #1ABC9C;
     border-color: #1ABC9C;
   }
@@ -26,6 +42,14 @@
     text-align: center;
     color: #1ABC9C;
     margin-bottom: 50px;
+=======
+    background-color: #00d1b2;
+    border-color: #00d1b2;
+  }
+  
+  section {
+    padding: 40px 0;
+>>>>>>> about
   }
   
   #team .card {
@@ -125,12 +149,12 @@
   
   .backside .card a {
     font-size: 18px;
-    color: #007b5e !important;
+    color: #00d1b2 !important;
   }
   
   .frontside .card .card-title,
   .backside .card .card-title {
-    color: #007b5e !important;
+    color: #00d1b2 !important;
   }
   
   .frontside .card .card-body img {
