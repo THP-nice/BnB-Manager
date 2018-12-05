@@ -32,6 +32,8 @@ gem 'azure-storage', require: false
 gem 'gibbon'
 #Stripe
 gem 'stripe'
+#Twitter
+gem 'twitter'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
