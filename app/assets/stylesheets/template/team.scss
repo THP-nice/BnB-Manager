@@ -1,20 +1,20 @@
 .footer-section {
   #team {
-    background: #eee !important;
+    background: #f9f9f9 !important;
   }
   
   .btn-primary:hover,
   .btn-primary:focus {
-    background-color: #108d6f;
-    border-color: #108d6f;
+    background-color: #00d1b2;
+    border-color: #00d1b2;
     box-shadow: none;
     outline: none;
   }
   
   .btn-primary {
     color: #fff;
-    background-color: #007b5e;
-    border-color: #007b5e;
+    background-color: #00d1b2;
+    border-color: #00d1b2;
   }
   
   section {
@@ -23,8 +23,8 @@
   
   section .section-title {
     text-align: center;
-    color: #007b5e;
-    margin-bottom: 50px;
+    color: #00d1b2;
+    margin-bottom: 35px;
     text-transform: uppercase;
   }
   
@@ -125,12 +125,12 @@
   
   .backside .card a {
     font-size: 18px;
-    color: #007b5e !important;
+    color: #00d1b2 !important;
   }
   
   .frontside .card .card-title,
   .backside .card .card-title {
-    color: #007b5e !important;
+    color: #00d1b2 !important;
   }
   
   .frontside .card .card-body img {
