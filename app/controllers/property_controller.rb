@@ -42,7 +42,7 @@ end
 
   def property_params
     params.require(:property).permit(:additional_content, :street_number, :route, :locality,
-      :administrative_area_level_1, :country, :postal_code, :full_adress, :user_id)
+      :administrative_area_level_1, :country, :postal_code, :full_address, :user_id)
   end
 
 end
