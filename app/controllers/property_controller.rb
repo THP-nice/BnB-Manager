@@ -26,6 +26,18 @@ class PropertyController < ApplicationController
     @property = Property.find(params[:id])
   end
 
+  def edit
+    @property = Property.find(params[:id])
+  end
+
+  def update
+    @property = Property.find(params[:id])
+    @property.update(property_params)
+
+    flash[:success] = "Informations modifiées avec succès."
+    redirect_to gossips_path
+end
+
   private
 
   def property_params
