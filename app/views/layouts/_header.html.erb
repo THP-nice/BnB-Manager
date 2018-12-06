@@ -1,6 +1,8 @@
 <% if current_page?(root_path) %>
-
   <header id="header" class="transparent-header dark">
+<% else %>
+  <header id="header" class="dark">
+<% end %>
 
     <div id="header-wrap">
 
@@ -19,7 +21,7 @@
         ============================================= -->
         <nav id="primary-menu">
 
-          <ul>
+          <ul id="navbar-list">
             <li><a href="/"><div>Accueil</div></a>
             <li><a href="/services"><div>Services</div></a></li>
             <li><a href="/prices"><i class="fas fa-caret-down" style="top: 2px"></i>Tarifs</a>
@@ -39,7 +41,7 @@
                 </ul>
               </li>
             <% else %>
-              <li><%= link_to 'S\'inscrire', new_user_registration_path %></li>
+              <li class="subscribe-li"><%= link_to 'S\'inscrire', new_user_registration_path %></li>
               <li><a href="#modal-register" data-lightbox="inline" ><i class="icon-line2-user mr-1 position-relative" style="padding-right: 20px;"></i>Se connecter</span></a></li>
             <% end %>
           </ul>
@@ -51,5 +53,3 @@
     </div>
 
   </header><!-- #header end -->
-
-<% end %>

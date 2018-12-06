@@ -26,4 +26,17 @@
  @import "template/responsive";
  @import "template/footer";
  @import "template/team";
- @import "template/about";
+
+ /*****HEADER RESPONSIVE MEDIUM SIZE LENGHT FIX*****/
+
+@media screen and (max-width: 1200px) and (min-width: 990px) {
+  .subscribe-li {
+    display: none;
+  }
+  #logo a:first-child {
+    display: none;
+  }
+  #logo a:nth-child(2) {
+    display: inherit;
+  }
+}
