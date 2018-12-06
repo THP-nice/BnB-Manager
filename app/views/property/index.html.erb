@@ -1,5 +1,6 @@
 <% @property.each do |property| %>
       <tr>
-        <td><%= property.additional_content %></td> <br />
+        <td><%= property.additional_content %></td>
+        <%= link_to 'Voir', property %> <br />
       </tr>
 <% end %>
