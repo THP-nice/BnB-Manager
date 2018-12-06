@@ -19,3 +19,11 @@
 //= require template/functions
 //= require autocomplete
 //= require_tree .
+
+// Prevent ENTER keypress to submit a web form
+
+$("form").on("keypress", function (e) {
+  if (e.keyCode == 13) {
+    return false;
+  }
+});
