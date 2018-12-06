@@ -1,0 +1,40 @@
+<% content_for :title do %>
+  Connexion | BnB Manager
+<% end %>
+
+<div class="card divcenter mt-4" style="max-width: 540px;">
+  <div class="card-header py-3 center">
+    <h2 class="mb-0 t400 text-center center">Connexion</h2>
+  </div>
+
+  <div class="card-body divcenter py-5" style="max-width: 70%;">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'nobottommargin row' }) do |f| %>
+      <div class="col-12">
+        <%= f.label :email %><br>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control not-dark" %>
+      </div>
+
+      <div class="col-12 mt-4">
+        <%= f.label :mot_de_passe %><br>
+        <%= f.password_field :password, autocomplete: "current-password", class:"form-control not-dark" %>
+      </div>
+
+      <% if devise_mapping.rememberable? -%>
+        <div class="col-12 mt-4">
+          <%= f.check_box :remember_me %>
+          <%= f.label :se_souvenir_de_moi %>
+        </div>
+      <% end -%>
+
+      <div class="col-12 mt-4">
+        <%= f.submit "Se connecter", class:"button btn-block nomargin" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="card-footer py-4 center">
+    <h3 class="t400 text-center center">Vous n'êtes pas encore inscrit?</h3>
+    <%= render "devise/shared/links" %>
+  </div>
+
+</div>
