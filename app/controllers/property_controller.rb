@@ -23,6 +23,7 @@ class PropertyController < ApplicationController
   end
 
   def show
+    @property = Property.find(params[:id])
   end
 
   private

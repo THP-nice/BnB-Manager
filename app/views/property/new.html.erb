@@ -26,13 +26,13 @@
   </div>
 
   <div class="field">
-    <%= form.label 'Pays' %>
-    <%= form.text_field :country, id: :country %>
+    <%= form.label 'Code postal' %>
+    <%= form.number_field :postal_code, id: :postal_code %>
   </div>
 
   <div class="field">
-    <%= form.label 'Code postal' %>
-    <%= form.number_field :postal_code, id: :postal_code %>
+    <%= form.label 'Pays' %>
+    <%= form.text_field :country, id: :country %>
   </div>
 
     <%= form.hidden_field :user_id, value: current_user.id %>
