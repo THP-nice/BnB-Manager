@@ -2,66 +2,73 @@
   Editer mon compte | BnB Manager
 <% end %>
 
-<h2>Editer mon compte</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :prénom %><br />
-    <%= f.text_field :first_name, autofocus: true %>
+<div class="card divcenter mt-4" style="max-width: 540px;">
+  <div class="card-header py-3 center">
+    <h2 class="mb-0 t400 text-center center">Editer mon compte</h2>
   </div>
+  
+  <div class="card-body divcenter py-5" style="max-width: 70%;">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'nobottommargin row' }) do |f| %>
+      <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :nom %><br />
-    <%= f.text_field :last_name %>
-  </div>
+      <div class="col-12">
+        <%= f.label :prénom %><br />
+        <%= f.text_field :first_name, autofocus: true, class:"form-control not-dark" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :date_de_naissance %><br />
-    <%= f.date_select :birthday, { order: [:day, :month, :year], prompt: { day: 'Jour', month: 'Mois', year: 'Année' }, start_year: Date.today.year - 18, end_year: Date.today.year - 100 }, { required: true } %>
-  </div>
+      <div class="col-12 mt-4">
+        <%= f.label :nom %><br />
+        <%= f.text_field :last_name, class:"form-control not-dark"%>
+      </div>
 
-  <div class="field">
-    <%= f.label :téléphone %><br />
-    <%= f.telephone_field :phone_number %>
-  </div>
+      <div class="col-12 mt-4">
+        <%= f.label :date_de_naissance %><br />
+        <%= f.date_select :birthday, { order: [:day, :month, :year], prompt: { day: 'Jour', month: 'Mois', year: 'Année' }, start_year: Date.today.year - 18, end_year: Date.today.year - 100 }, { required: true } %>
+      </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
-  </div>
+      <div class="col-12 mt-4">
+        <%= f.label :téléphone %><br />
+        <%= f.telephone_field :phone_number, class:"form-control not-dark" %>
+      </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+      <div class="col-12 mt-4">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autocomplete: "email", class:"form-control not-dark" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :mot_de_passe %> <i>(laissez vide si vous ne souhaitez pas le modifier)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> caractères minimum</em>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="col-12 mt-4">
+        <%= f.label :mot_de_passe %><br><i>(laissez vide si vous ne souhaitez pas le modifier)</i><br />
+        <%= f.password_field :password, autocomplete: "new-password", class:"form-control not-dark" %>
+        <% if @minimum_password_length %>
+          <br>
+          <em>* <%= @minimum_password_length %> caractères minimum</em>
+        <% end %>
+      </div>
+
+      <div class="col-12 mt-4">
+        <%= f.label :confirmation_de_mot_de_passe %><br>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control not-dark" %>
+      </div>
+
+      <div class="col-12 mt-4">
+        <%= f.label :mot_de_passe_actuel %><br><i>(nous avons besoin de votre mot de passe actuel afin de confirmer vos modifications)</i><br />
+        <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control not-dark" %>
+      </div>
+
+      <div class="col-12 mt-4">
+        <%= f.submit "Mettre à jour", class: "button btn-block nomargin" %>
+      </div>
     <% end %>
   </div>
 
-  <div class="field">
-    <%= f.label :confirmation_de_mot_de_passe %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="card-footer py-4 center">
+    <h3 class="t400 text-center center">Annuler mon compte</h3>
+    <p class="mb-3">Pas convaincu par nos services? <%= button_to "Annuler mon compte", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-outline-danger" %></p>
+    <%= link_to "Retour", :back %>
   </div>
 
-  <div class="field">
-    <%= f.label :mot_de_passe_actuel %> <i>(nous avons besoin de votre mot de passe actuel afin de confirmer vos modifications)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Mettre à jour" %>
-  </div>
-<% end %>
-
-<h3>Annuler mon compte</h3>
-
-<p>Pas convaincu par nos services? <%= button_to "Annuler mon compte", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Retour", :back %>
+</div>
