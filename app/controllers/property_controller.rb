@@ -1,4 +1,5 @@
 class PropertyController < ApplicationController
+  before_action :authenticate_user!
 
   def new
     @property = Property.new
@@ -15,6 +16,13 @@ class PropertyController < ApplicationController
         format.json { render json: @property.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def index
+    @property = Property.all
+  end
+
+  def show
   end
 
   private
