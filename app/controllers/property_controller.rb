@@ -32,10 +32,15 @@ class PropertyController < ApplicationController
 
   def update
     @property = Property.find(params[:id])
-    @property.update(property_params)
-
-    flash[:success] = "Informations modifiées avec succès."
-    redirect_to gossips_path
+    respond_to do |format|
+      if @property.update(property_params)
+        format.html { redirect_to @property, notice: "Informations modifiées avec succès." }
+        format.json { render :show, status: :created, location: @property }
+      else
+        format.html { render :edit }
+        format.json { render json: @property.errors, status: :unprocessable_entity }
+      end
+    end
 end
 
   private
