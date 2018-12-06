@@ -12,7 +12,12 @@
 
       <div class="col-12">
         <%= form.label 'Adresse' %>
-        <%= form.text_field :additional_content, placeholder: "Entrez votre adresse", id: :autocomplete_address, class:"form-control not-dark" %>
+        <%= form.text_field :full_address, placeholder: "Entrez votre adresse", id: :autocomplete_address, class:"form-control not-dark" %>
+      </div>
+
+      <div class="col-12 mt-4">
+        <%= form.label 'Complément d\'adresse' %>
+        <%= form.text_area :additional_content, placeholder: "Nom du bâtiment, résidence, étage, etc.", class:"form-control not-dark" %>
       </div>
 
       <div class="col-12 mt-4">
