@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :property
+
   devise_for :users
 
   resources :charges
