@@ -1,4 +1,5 @@
-<%= @property.street_number %><br />
+<%= @property.full_address %><br />
+<%= @property.street_number %>
 <%= @property.additional_content %>
 <%= @property.route %>
 <%= @property.locality %>
@@ -7,4 +8,5 @@
 <%= @property.postal_code %>
 
 <a href="/property/<%= @property.id %>/edit">Editer</a>
+<%= link_to 'Supprimer', @property, method: :delete, data: { confirm: 'Cette action est irréversible, en êtes-vous sûr ?' } %>
 <%= link_to 'Retour', property_index_path %>
