@@ -37,6 +37,8 @@
               <li><%= link_to current_user.first_name, edit_user_registration_path, class: "navbar-link" %>
                 <ul>
                   <li><%= link_to "Editer mon profil", edit_user_registration_path, class:"navbar-item" %></li>
+                  <li><%= link_to "Ajouter un bien", new_property_path, class:"navbar-item" %></li>
+                  <li><%= link_to "Mes biens", property_index_path, class:"navbar-item" %></li>
                   <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class:"navbar-item" %></li>
                 </ul>
               </li>
