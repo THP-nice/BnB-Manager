@@ -9,7 +9,7 @@ class PropertyController < ApplicationController
     @property = Property.new(property_params)
     respond_to do |format|
       if @property.save
-        format.html { redirect_to @property, notice: 'Logement ajouté !' }
+        format.html { redirect_to @property, notice: 'Logement ajouté.' }
         format.json { render :index, status: :created, location: @property }
       else
         format.html { render :new }
@@ -41,7 +41,15 @@ class PropertyController < ApplicationController
         format.json { render json: @property.errors, status: :unprocessable_entity }
       end
     end
-end
+  end
+
+  def destroy
+      @property.destroy
+      respond_to do |format|
+        format.html { redirect_to property_index_path, notice: 'Logement supprimé.' }
+        format.json { head :no_content }
+      end
+  end
 
   private
 
