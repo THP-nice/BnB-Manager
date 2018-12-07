@@ -21,6 +21,18 @@
       </div>
 
       <div class="col-12 mt-4">
+        <%= form.number_field :area, class:"form-control not-dark", placeholder: "Superficie en m2*" %>
+      </div>
+
+      <div class="col-12 mt-4">
+        <%= form.number_field :sleeps, class:"form-control not-dark", placeholder: "Nombre de couchage*" %>
+      </div>
+
+      <div class="col-12 mt-4">
+        <%= form.number_field :rooms, class:"form-control not-dark", placeholder: "Nombre de pièces*" %>
+      </div>
+
+      <div class="col-12 mt-4">
         <%= form.label 'N° de voie' %>
         <%= form.number_field :street_number, id: :street_number, class:"form-control not-dark", :readonly => true %>
       </div>
