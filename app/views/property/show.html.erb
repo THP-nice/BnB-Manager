@@ -8,5 +8,5 @@
 <%= @property.postal_code %>
 
 <a href="/property/<%= @property.id %>/edit">Editer</a>
-<%= link_to 'Supprimer', property, method: :delete, data: { confirm: 'Cette action est irréversible, en êtes-vous sûr ?' } %>
+<%= link_to 'Supprimer', @property, method: :delete, data: { confirm: 'Cette action est irréversible, en êtes-vous sûr ?' } %>
 <%= link_to 'Retour', property_index_path %>

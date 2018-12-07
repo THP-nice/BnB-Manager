@@ -44,7 +44,8 @@ class PropertyController < ApplicationController
   end
 
   def destroy
-      @property.destroy
+    @property = Property.find(params[:id])
+    @property.destroy
       respond_to do |format|
         format.html { redirect_to property_index_path, notice: 'Logement supprimé.' }
         format.json { head :no_content }
