@@ -16,7 +16,7 @@ class User < ApplicationRecord
        body: {
          email_address: self.email,
          status: "subscribed",
-         merge_fields: { FNAME: self.first_name }
+         merge_fields: { FNAME: self.first_name, LNAME: self.last_name, PHONE: self.phone_number }
        }
      )
    end
