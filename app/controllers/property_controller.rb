@@ -55,8 +55,20 @@ class PropertyController < ApplicationController
   private
 
   def property_params
-    params.require(:property).permit(:additional_content, :street_number, :route, :locality,
-      :administrative_area_level_1, :country, :postal_code, :full_address, :user_id)
+    params.require(:property).permit(
+      :additional_content,
+      :street_number,
+      :route,
+      :locality,
+      :administrative_area_level_1,
+      :country,
+      :postal_code,
+      :full_address,
+      :area,
+      :sleeps,
+      :rooms,
+      :user_id
+    )
   end
 
 end
