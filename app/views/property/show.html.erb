@@ -1,12 +1,13 @@
-<%= @property.full_address %><br />
-<%= @property.street_number %>
-<%= @property.additional_content %>
-<%= @property.route %>
-<%= @property.locality %>
-<%= @property.administrative_area_level_1 %>
-<%= @property.country %>
+<% if @property.additional_content.present? %>
+  <%= @property.additional_content %><br>
+<% end %>
+<%= @property.street_number %>,
+<%= @property.route %><br>
 <%= @property.postal_code %>
+<%= @property.locality %>,
+<%= @property.administrative_area_level_1 %><br>
+<%= @property.country.upcase %>
 
-<a href="/property/<%= @property.id %>/edit">Editer</a>
+<%= link_to 'Editer', edit_property_path %>
 <%= link_to 'Supprimer', @property, method: :delete, data: { confirm: 'Cette action est irréversible, en êtes-vous sûr ?' } %>
 <%= link_to 'Retour', property_index_path %>
