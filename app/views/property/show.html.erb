@@ -1,12 +1,24 @@
-<% if @property.additional_content.present? %>
-  <%= @property.additional_content %><br>
-<% end %>
-<%= @property.street_number %>,
-<%= @property.route %><br>
-<%= @property.postal_code %>
-<%= @property.locality %>,
-<%= @property.administrative_area_level_1 %><br>
-<%= @property.country.upcase %>
+<h4>Logement :</h4>
+<ul>
+  <li>Superficie : <%= @property.area %>m2</li>
+  <li>Nombre de couchage : <%= @property.sleeps %> couchages</li>
+  <% if @property.rooms == 1 %>
+    <li>Type : <%= @property.rooms %> pièce</li>
+  <% else %>
+    <li>Type : <%= @property.rooms %> pièces</li>
+  <% end %>
+</ul>
+
+<h4>Adresse :</h4>
+<ul>
+  <% if @property.additional_content.present? %>  
+    <li><%= @property.additional_content %></li>
+  <% end %>
+  <li><%= @property.street_number %>, <%= @property.route %></li>
+  <li><%= @property.postal_code %>, <%= @property.locality %></li>
+  <li><%= @property.administrative_area_level_1 %></li>
+  <li><%= @property.country.upcase %></li>
+</ul>
 
 <%= link_to 'Editer', edit_property_path %>
 <%= link_to 'Supprimer', @property, method: :delete, data: { confirm: 'Cette action est irréversible, en êtes-vous sûr ?' } %>
