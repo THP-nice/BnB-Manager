@@ -7,8 +7,6 @@ class PropertyController < ApplicationController
 
   def create
     @property = Property.new(property_params)
-
-
     respond_to do |format|
       if @property.save
         format.html { redirect_to @property, notice: 'Logement ajouté.' }
@@ -70,7 +68,7 @@ class PropertyController < ApplicationController
       :sleeps,
       :rooms,
       :user_id,
-      :images
+      images: []
     )
   end
 
