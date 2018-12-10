@@ -15,13 +15,17 @@
 
 <h4>Adresse :</h4>
 <ul>
-  <% if @property.additional_content.present? %>  
+  <% if @property.additional_content.present? %>
     <li><%= @property.additional_content %></li>
   <% end %>
   <li><%= @property.street_number %>, <%= @property.route %></li>
   <li><%= @property.postal_code %>, <%= @property.locality %></li>
   <li><%= @property.administrative_area_level_1 %></li>
   <li><%= @property.country.upcase %></li>
+  <% (0...@property.images.count).each do |image| %>
+      <%= image_tag (@property.images[image]) %>
+    <% end %>
+
 </ul>
 
 <%= link_to 'Editer', edit_property_path %>
