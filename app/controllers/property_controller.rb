@@ -9,6 +9,7 @@ class PropertyController < ApplicationController
     @property = Property.new(property_params)
     respond_to do |format|
       if @property.save
+        TwilioTextMessenger.new(@message).call
         format.html { redirect_to @property, notice: 'Logement ajouté.' }
         format.json { render :index, status: :created, location: @property }
       else
