@@ -23,9 +23,8 @@
   <li><%= @property.administrative_area_level_1 %></li>
   <li><%= @property.country.upcase %></li>
   <% (0...@property.images.count).each do |image| %>
-      <%= image_tag (@property.images[image]) %>
-    <% end %>
-
+    <%= image_tag (@property.images[image]) %>
+  <% end %>
 </ul>
 
 <%= link_to 'Editer', edit_property_path %>
