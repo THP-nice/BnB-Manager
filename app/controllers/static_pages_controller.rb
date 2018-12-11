@@ -1,5 +1,9 @@
 class StaticPagesController < ApplicationController
 
+  def new
+    @contact = Contact.new    
+  end
+
   def home
     @contact = Contact.new
   end
@@ -33,11 +37,11 @@ class StaticPagesController < ApplicationController
     respond_to do |format|
       if @contact.valid?
         ContactMailer.contact_email(@contact).deliver_now
+        flash[:success] = "Merci pour votre message, nous vous contacterons prochainement !"
         format.html { redirect_to root_path }
-        format.js   { flash.now[:success] = "Merci pour votre message, nous vous contacterons prochainement !" }
       else
+        flash[:danger] = "Oups, une erreur est survenue lors de l'envoi de votre message. Veuillez réessayer ultérieurement."
         format.html { redirect_to contact_path }
-        format.js   { flash.now[:error] = "Oups, une erreur est survenue lors de l'envoi de votre message. Veuillez réessayer ultérieurement." }
       end
     end
   end
