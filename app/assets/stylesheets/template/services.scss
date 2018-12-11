@@ -1,13 +1,17 @@
 #services-content {
   img {
-    width: 450px;
-    height: 350px;
-    border-radius: 5px;
+    border-radius: 6px;
   }
   h4 {
     color: #00d1b2;
   }
   ul {
     list-style-type: none; 
+  }
+  .responsive {
+    width: 100%;
+    min-width: 33%;
+    height: auto;
+    min-height: 330px;
   }
 }
