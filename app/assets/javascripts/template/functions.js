@@ -678,7 +678,7 @@ var SEMICOLON = SEMICOLON || {};
 					var element = $(this),
 						elementImg = element.attr( 'data-lazyload' );
 
-					element.attr( 'src', 'images/blank.svg' ).css({ 'background': 'url(images/preloader.gif) no-repeat center center #FFF' });
+					element.attr( 'src', '/assets/blank.svg' ).css({ 'background': 'url(/assets/preloader.gif) no-repeat center center #FFF' });
 
 					element.appear(function () {
 						element.css({ 'background': 'none' }).removeAttr( 'width' ).removeAttr( 'height' ).attr('src', elementImg);
@@ -2097,7 +2097,7 @@ var SEMICOLON = SEMICOLON || {};
 			SEMICOLON.widget.linkScroll();
 			SEMICOLON.widget.contactForm();
 			SEMICOLON.widget.subscription();
-			SEMICOLON.widget.quickContact();
+			// SEMICOLON.widget.quickContact();
 			SEMICOLON.widget.stickySidebar();
 			SEMICOLON.widget.cookieNotify();
 			SEMICOLON.widget.cartQuantity();
