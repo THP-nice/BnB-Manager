@@ -49,7 +49,7 @@ class StaticPagesController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:name, :email, :body)
+    params.require(:contact).permit(:name, :email, :body, :phone_number)
   end
 
 end
