@@ -11,7 +11,7 @@ class TwilioTextMessenger
     client.messages.create({
       from: Rails.application.credentials.twilio_phone_number,
       to: +33686422379,
-      body: "Cher utilisateur votre bien immobilier a bien été enregistré, nous allons prendre contact avec vous sous les plus bref délais, merci pour votre confiance !"
+      body:"Nous vous informons qu'un nouveau bien immobilier vient d'être enregistrer, veuillez prendre rapidement contact avec l'utilisateur !"
     })
   end
 end
