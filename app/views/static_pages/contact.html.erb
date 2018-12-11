@@ -10,38 +10,45 @@
         <h3 class="section-subheading text-muted">Nous nous engageons à vous répondre sous 24 heures.</h3>
       </div>
     </div>
+
     <div class="row">
       <div class="col-lg-12">
-        <form id="contactForm" name="sentMessage" novalidate="novalidate">
+        <%= form_for @contact, url: { action: 'create'} do |f| %>
           <div class="row">
             <div class="col-md-6">
+
               <div class="form-group">
-                <input class="form-control" id="name" type="text" placeholder="Votre nom et prénom" required="required" data-validation-required-message="Veuillez indiquer votre nom et prénom">
+                <%= f.text_field :name, class:"form-control", id:"name", placeholder:"Votre nom et prénom" %>
                 <p class="help-block text-danger"></p>
               </div>
+
               <div class="form-group">
-                <input class="form-control" id="email" type="email" placeholder="Votre adresse Email" required="required" data-validation-required-message="Veuillez indiquer votre adresse email.">
+                <%= f.email_field :email, class:"form-control", id:"email", placeholder:"Votre adresse email" %>
                 <p class="help-block text-danger"></p>
               </div>
+
               <div class="form-group">
-                <input class="form-control" id="phone" type="tel" placeholder="Votre numéro de téléphone" required="required" data-validation-required-message="Veuillez indiquer votre numéro de téléphone.">
+                <input class="form-control" id="phone" type="tel" placeholder="Votre numéro de téléphone">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
+
             <div class="col-md-6">
               <div class="form-group">
-                <textarea class="form-control" id="message" placeholder="Votre message" required="required" data-validation-required-message="Veuillez indiquer votre message"></textarea>
+                <%= f.text_area :body, class:"form-control", id:"message", placeholder:"Votre message" %>
                 <p class="help-block text-danger"></p>
               </div>
             </div>
             <div class="clearfix"></div>
+
             <div class="col-lg-12 text-center">
               <div id="success"></div>
-              <button id="sendMessageButton" class="btn btn-primary btn-xl" type="submit">Envoyer Message</button>
+              <%= f.submit 'Envoyer', id:"sendMessageButton", class:"btn btn-primary btn-xl" %>
             </div>
+
           </div>
-        </form>
+        <%end%>
       </div>
     </div>
   </div>
-</section> 
+</section>
