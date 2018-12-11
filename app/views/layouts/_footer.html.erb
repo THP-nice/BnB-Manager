@@ -109,8 +109,7 @@
               <h4>Nous contacter</h4>
 
               <div class="quick-contact-form-result"></div>
-
-              <form id="quick-contact-form" name="quick-contact-form" action="include/quickcontact.php" method="post" class="quick-contact-form nobottommargin">
+              <%= form_for @contact, url: { action: 'create'} do |f| %>
 
                 <div class="form-process"></div>
 
@@ -118,20 +117,21 @@
                   <div class="input-group-prepend">
                         <div class="input-group-text"><i class="icon-user"></i></div>
                       </div>
-                  <input type="text" class="required form-control input-block-level" id="quick-contact-form-name" name="quick-contact-form-name" value="" placeholder="Votre nom et prénom" />
+                  <%= f.text_field :name, class:'required form-control input-block-level', id:'quick-contact-form-name', placeholder:'Votre nom et prénom' %>
                 </div>
+
                 <div class="input-group divcenter">
                   <div class="input-group-prepend">
                     <div class="input-group-text"><i class="icon-email2"></i></div>
                   </div>
-                  <input type="text" class="required form-control email input-block-level" id="quick-contact-form-email" name="quick-contact-form-email" value="" placeholder="Votre adresse email" />
+                  <%= f.email_field :email, class:'required form-control email input-block-level', id:'quick-contact-form-email', placeholder:'Votre adresse email' %>
                 </div>
-                <textarea class="required form-control input-block-level short-textarea" id="quick-contact-form-message" name="quick-contact-form-message" rows="4" cols="30" placeholder="Votre message"></textarea>
-                <input type="text" class="hidden" id="quick-contact-form-botcheck" name="quick-contact-form-botcheck" value="" />
-                <button type="submit" id="quick-contact-form-submit" name="quick-contact-form-submit" class="btn nomargin" value="submit">Envoyer Message</button>
 
-              </form>
+                <%= f.text_area :body, class:'required form-control input-block-level short-textarea', id:'quick-contact-form-message', rows:"4", cols:"30", placeholder:'Votre message' %>
 
+                <%= f.submit 'Envoyer', id:"quick-contact-form-submit", class:"btn nomargin" %>
+
+              <%end%>
             </div>
 
           </div>
