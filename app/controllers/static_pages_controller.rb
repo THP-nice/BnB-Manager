@@ -38,10 +38,10 @@ class StaticPagesController < ApplicationController
       if @contact.valid?
         ContactMailer.contact_email(@contact).deliver_now
         flash[:success] = "Merci pour votre message, nous vous contacterons prochainement !"
-        format.html { redirect_to root_path }
+        format.html { redirect_to request.referrer }
       else
         flash[:danger] = "Oups, une erreur est survenue lors de l'envoi de votre message. Veuillez réessayer ultérieurement."
-        format.html { redirect_to contact_path }
+        format.html { redirect_to request.referrer }
       end
     end
   end
