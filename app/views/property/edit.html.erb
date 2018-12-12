@@ -67,9 +67,16 @@
         </div>
 
         <div class="col-12 mt-4">
-        <%= form.label 'Images' %>
-        <%= form.file_field :images, multiple: true, class:"form-control not-dark" %>
-      </div>
+          <%= form.label 'Images' %>
+          <%= form.file_field :images, multiple: true, class:"form-control not-dark" %>
+        </div>
+
+        <% if current_user && current_user.admin %>
+        <div class="col-12 mt-4">
+          <%= form.label 'Statut' %>
+          <%= form.check_box :status, class:"form-control not-dark" %>
+        </div>
+        <% end %>
 
         <%= form.hidden_field :user_id, value: current_user.id %>
 
