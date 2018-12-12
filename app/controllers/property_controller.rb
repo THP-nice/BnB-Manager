@@ -28,11 +28,19 @@ class PropertyController < ApplicationController
   end
 
   def show
-    @property = Property.find(params[:id])
+    if current_user.id == Property.find(params[:id]).user_id || current_user.admin
+      @property = Property.find(params[:id])
+    else
+      redirect_to property_index_path, notice: "Pas touche"
+    end
   end
 
   def edit
-    @property = Property.find(params[:id])
+    if current_user.id == Property.find(params[:id]).user_id || current_user.admin
+      @property = Property.find(params[:id])
+    else
+      redirect_to property_index_path, notice: "Pas touche"
+    end
   end
 
   def update
@@ -48,7 +56,7 @@ class PropertyController < ApplicationController
     end
   end
 
-  def destroyHello
+  def destroy
     @property = Property.find(params[:id])
     @property.destroy
       respond_to do |format|
