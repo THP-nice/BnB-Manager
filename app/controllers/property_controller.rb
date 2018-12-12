@@ -1,6 +1,5 @@
 class PropertyController < ApplicationController
   before_action :authenticate_user!
-  before_action :admin_user, only: [:index]
 
   def new
     @property = Property.new
@@ -21,7 +20,11 @@ class PropertyController < ApplicationController
   end
 
   def index
-    @property = Property.all
+    if current_user && current_user.admin
+      @property = Property.all
+    else
+      @property = current_user.properties
+    end
   end
 
   def show
@@ -45,7 +48,7 @@ class PropertyController < ApplicationController
     end
   end
 
-  def destroy
+  def destroyHello
     @property = Property.find(params[:id])
     @property.destroy
       respond_to do |format|
