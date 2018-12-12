@@ -1,7 +1,6 @@
 <% @property.each do |property| %>
       <tr>
         <td><%= property.full_address %></td>
-        <%= check_box("property", "status", {}, "Loué", "Vacant") %>
         <%= link_to 'Voir', property %> <br />
       </tr>
 <% end %>
