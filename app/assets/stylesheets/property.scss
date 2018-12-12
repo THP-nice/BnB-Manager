@@ -1,3 +1,26 @@
-// Place all the styles related to the property controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#property-content {
+  .property-title {
+    color: #00d1b2;
+  }
+  .adress-title {
+    color: #00d1b2;
+  }
+  .adress-list {
+    list-style-type: none; 
+  }
+  .property-list {
+    list-style-type: none;
+  }
+  .carousel-item {
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  @media screen and (max-width: 768px) {
+    .margin-mobile {
+      margin-top: 40px;
+    }    
+  }
+}
