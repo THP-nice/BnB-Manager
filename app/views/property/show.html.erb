@@ -35,7 +35,12 @@
             <li><%= @property.administrative_area_level_1 %></li>
             <li><%= @property.country.upcase %></li>
             <% (0...@property.images.count).each do |image| %>
-            <%= image_tag (@property.images[image]) %>
+              <%= image_tag (@property.images[image]) %>
+            <% end %>
+            <% if @property.status == true %>
+              <li>Statut : Location en cours</li>
+            <% else %>
+              <li>Statut : Pas de location en cours</li>
             <% end %>
           </ul>
 
