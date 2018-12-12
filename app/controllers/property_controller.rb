@@ -81,6 +81,7 @@ class PropertyController < ApplicationController
       :sleeps,
       :rooms,
       :user_id,
+      :status,
       images: []
     )
   end
