@@ -1,6 +1,6 @@
 class PropertyController < ApplicationController
   before_action :authenticate_user!
-  before_action :admin_user, :only [:index]
+  before_action :admin_user, only: [:index]
 
   def new
     @property = Property.new
