@@ -107,7 +107,7 @@
               <h4>Nous contacter</h4>
 
               <div class="quick-contact-form-result"></div>
-              <%= form_for(Contact.new, url: { action: 'create'}, html: { id: 'quick-contact-form', class: 'quick-contact-form nobottommargin' }) do |f| %>
+              <%= form_for(Contact.new, url: create_message_url, html: { id: 'quick-contact-form', class: 'quick-contact-form nobottommargin' }) do |f| %>
 
                 <div class="form-process"></div>
 
@@ -121,7 +121,7 @@
 
                 <%= f.text_area :body, class:'required form-control input-block-level short-textarea', id:'quick-contact-form-message', rows:"4", cols:"30", placeholder:'Votre message' %>
                 <%= f.submit 'Envoyer', id:"quick-contact-form-submit", class:"button btn nomargin" %>
-          
+
               <%end%>
             </div>
 
