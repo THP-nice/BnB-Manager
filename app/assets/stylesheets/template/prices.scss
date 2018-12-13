@@ -1,23 +1,15 @@
 #prices-content {
   .alpha{ max-width: 1200px; 
   }
-  header {
-    background: #563d7c;
-    padding: 2em 1em;
-    color: #fff;
-    margin-bottom: 2em;
-    h1 {
-        font-weight: 200;
-    }
-  }
   .card {
     background: #fff;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    text-align: justify;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 6px;
     margin-left: 20px;
     margin-right: 20px;
     img {
         width: 100%;
+        border-radius: 3px;
     }
   }
   [class*="row"] {
@@ -34,13 +26,32 @@
   .welcome-price {
     text-align: center;
     font-weight: bold;
-    font-size: 1.25em;
+    font-size: 1.30em;
+    margin-top: 20px;
     color: #00d1b2;
   }
   .title-card {
     margin-top: 20px;
+    border-bottom: 1.5px solid rgba(0,0,0,0.1);
   }
   ul {
     list-style-type: none !important;
+    margin-top: 20px;
+  }
+  h4 {
+    color: #00d1b2;
+    font-size: 1.30em;
+  }
+  i {
+    margin-left: 8px;
+  }
+  .price {
+    border-top: 1.5px solid rgba(0,0,0,0.1);
+    margin-top: 5px;
+  }
+  @media screen and (max-width: 768px) {
+    .margin-mobile {
+      margin-top: 40px;
+    }    
   }
 }
