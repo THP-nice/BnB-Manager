@@ -2,58 +2,6 @@
   Votre bien | BnB Manager
 <% end %>
 
-<!-- <section id="content-property">
-
-      <div class="content-wrap">
-
-        <div class="container clearfix">
-
-          <div class="fancy-title title-dotted-border title-center">
-            <h1>Votre bien</h1>
-          </div>
-          <div class="heading-block">
-            <h4 class="property-title">Logement</h4>
-          </div>
-          <ul class="property-list">
-            <li><strong>Superficie</strong> : <%= @property.area %>m2</li>
-            <li><strong>Nombre de couchages</strong> : <%= @property.sleeps %> couchages</li>
-              <% if @property.rooms == 1 %>
-                <li><strong>Type</strong> : <%= @property.rooms %> pièce</li>
-              <% else %>
-                <li>Type : <%= @property.rooms %> pièces</li>
-              <% end %>
-          </ul>
-          <div class="heading-block">
-          <h4 class="adress-title">Adresse</h4>
-          </div>
-          <ul class="adress-list">
-            <% if @property.additional_content.present? %>
-              <li><%= @property.additional_content %></li>
-            <% end %>
-            <li><%= @property.street_number %>, <%= @property.route %></li>
-            <li><%= @property.postal_code %>, <%= @property.locality %></li>
-            <li><%= @property.administrative_area_level_1 %></li>
-            <li><%= @property.country.upcase %></li>
-            <% (0...@property.images.count).each do |image| %>
-              <%= image_tag (@property.images[image]) %>
-            <% end %>
-            <% if @property.status == true %>
-              <li>Statut : Location en cours</li>
-            <% else %>
-              <li>Statut : Pas de location en cours</li>
-            <%= image_tag (@property.images[image]) %>
-            <% end %>
-          </ul>
-
-          <%= link_to 'Editer', edit_property_path %>
-          <%= link_to 'Supprimer', @property, method: :delete, data: { confirm: 'Cette action est irréversible, en êtes-vous sûr ?' } %>
-          <%= link_to 'Retour', property_index_path %>
-        </div>
-      </div>  
-</section>  !-->
-
-    
-
 <section id="property-content">
 
   <div class="content-wrap" style="padding-bottom: 0!important;">
@@ -67,44 +15,55 @@
       <div class="row justify-content-center">
         <div class="col-lg-6 col-md-8">
           <% (0...@property.images.count).each_with_index do |image, index| %>
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner" role="listbox">
-              <div class="carousel-item active">
-                <%= image_tag(@property.images.first) %>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <% i = 1 %>
+                <% while i < @property.images.count %>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="<%= i %>"></li>
+                  <% i+= 1 %>
+                <% end %>
+              </ol>
+              <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                  <% if index == 0 %>
+                    <%= image_tag(@property.images[image]) %>
+                  <% end %>
+                </div>
+                <% j = 1 %>
+                <% while j < @property.images.count %>
+                  <div class="carousel-item">
+                    <% if index == j %>
+                      <%= image_tag(@property.images[image]) %>
+                    <% end %>
+                  </div>
+                  <% j+= 1 %>
+                <% end %>
               </div>
-              <% if index == 1 %>
-              <div class="carousel-item">
-                <%= image_tag(@property.images.[image]) %>
-              </div>
-              <% end %>
-              <div class="carousel-item">
-                <%= image_tag('property_images/livingroom2.jpg') %>
-              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
           <% end %>
         </div>
       
         <div class="col-lg-auto col-md-8 margin-mobile">
           <h4>Détails du logement</h4>
           <ul class="iconlist">
+            <% if @property.status == true %>
+              <li class="mb-2"><i class="icon-line2-check" style="color: green"></i><strong>Statut</strong> : Location en cours</li>
+            <% else %>
+              <li class="mb-2"><i class="icon-line2-check" style="color: red"></i><strong>Statut</strong> : Pas de location en cours</li>
+            <% end %>
             <li class="mb-2"><i class="icon-line2-check"></i><strong>Superficie</strong> : <%= @property.area %>m2</li>
             <li class="mb-2"><i class="icon-line2-check"></i><strong>Nombre de couchages</strong> : <%= @property.sleeps %></li>
             <% if @property.rooms == 1 %>
-            <li class="mb-2"><i class="icon-line2-check"></i><strong>Type</strong> : <%= @property.rooms %> pièce</li>
+              <li class="mb-2"><i class="icon-line2-check"></i><strong>Type</strong> : <%= @property.rooms %> pièce</li>
             <% else %>
               <li class="mb-2"><i class="icon-line2-check"></i><strong>Type</strong> <%= @property.rooms %> pièces</li>
             <% end %>
@@ -119,11 +78,32 @@
               <li><%= @property.administrative_area_level_1 %></li>
               <li><%= @property.country.upcase %></li>
           </ul>
-        </div>              
+        </div>
+      
+      </div><!-- row end -->  
+
       <div class="clear topmargin"></div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+
+          <%= link_to property_index_path, :class => 'button button-mini button-border button-rounded' do %>
+            <i class="icon-repeat"></i>Retour
+          <% end %>
+
+          <%= link_to edit_property_path, :class => 'button button-mini button-border button-rounded' do %>
+            <i class="icon-lock3"></i>Editer
+          <% end %>
+
+          <%= link_to @property, method: :delete, data: { confirm: 'Cette action est irréversible, en êtes-vous sûr ?' }, :class => 'button button-mini button-border button-rounded button-red' do %>
+            <i class="icon-trash2"></i>Supprimer
+          <% end %>
+
+        </div>
+      </div>
     
-    </div>
+    </div><!-- containter clearfix end -->
 
   </div><!-- .content-wrap end -->
 
-</section><!-- #content end -->     
+</section><!-- #content end -->
