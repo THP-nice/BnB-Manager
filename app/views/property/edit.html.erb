@@ -76,6 +76,11 @@
           <%= form.label 'Statut' %>
           <%= form.check_box :status, class:"form-control not-dark" %>
         </div>
+        <div class="col-12 mt-4">
+          <%= form.label 'Documents' %>
+          <%= form.file_field :documents, multiple: true, class:"form-control not-dark" %>
+           
+        </div>
         <% end %>
 
         <%= form.hidden_field :user_id, value: current_user.id %>

@@ -82,7 +82,8 @@ class PropertyController < ApplicationController
       :rooms,
       :user_id,
       :status,
-      images: []
+      images: [],
+      documents: []
     )
   end
 
