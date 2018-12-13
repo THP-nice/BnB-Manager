@@ -1,8 +1,11 @@
 <% @property.each do |property| %>
-      <tr>
-        <td><%= property.full_address %></td>
-        <%= link_to 'Voir', property %> <br />
-      </tr>
+  <tr>
+    <td><%= property.full_address %></td>
+    <%= link_to 'Voir', property %> <br />
+  </tr>
+  <% if property.images.attached? %>
+    <%= image_tag(property.images.first) %>
+  <% end %>
 <% end %>
 
 <%= link_to 'Ajouter un logement', new_property_path %>
