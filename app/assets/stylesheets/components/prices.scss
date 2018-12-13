@@ -1,0 +1,32 @@
+#prices-content {
+  body {
+    background: #eee;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+  }
+  
+  p {
+    margin-bottom: 0.8em;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  .price-text {
+    font-weight: bold;
+    font-size: 1.25em;
+    text-align: center;
+  }
+
+  .title-card {
+    color: #00d1b2 !important;
+  }
+
+  @media screen and (max-width: 991px) and (min-width: 768px) {
+    .md-media {
+      margin: auto;
+    }
+  }
+}
