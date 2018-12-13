@@ -11,82 +11,77 @@
       </div>
       <div class='line'></div>
 
-      <div class="row justify-content-center">
-        <div class="card-deck">
-          <div class="card">
-            <%= image_tag('prices/welcome.jpg') %>
-              <div class="card-block">
-                <div class='title-card'>
-                  <h4 class="card-title text-center welcome">Accueil et départ de vos hôtes</h4>
-                </div>
-                <ul class="text-list">
-                  <li><i class="fa fa-check" aria-hidden="true"></i> Accueil chaleureux et personnalisé de vos voyageurs
-                  </li> <br>
-                  <li><i class="fa fa-check" aria-hidden="true"></i> Présentation de votre logement et de votre quartier
-                  </li> <br>
-                  <li><i class="fa fa-check" aria-hidden="true"></i> Etat des lieux d’entrée et de sortie</li> <br>
-                  <li><i class="fa fa-check" aria-hidden="true"></i> Fourniture de plans de la ville et d’horaires de bus</li> <br>
-                  <li><i class="fa fa-check" aria-hidden="true"></i> Remise et récupération des clés</li> <br>
-                  <li><i class="fa fa-check" aria-hidden="true"></i> Panier de bienvenue offert</li>
-                </ul>
-                <div class="price">
-                  <p class="welcome-price"><strong>29.99 €</strong></p>
-                </div>
-              </div>
-          </div>
-          <div class="card">
-            <%= image_tag('prices/clean.jpeg') %>
-              <div class="card-block">
-                <div class='title-card'>
-                  <h4 class="card-title text-center welcome">Ménage et remise en état</h4>
-                </div>
-                <ul class="text-list">
-                  <li><i class="fa fa-check" aria-hidden="true"></i> Rangement complet de toutes les pièces
-                  </li> <br>
-                  <li><i class="fa fa-check" aria-hidden="true"></i> Aspirateur et nettoyage du sol dans tout le logement
-                  </li> <br>
-                  <li><i class="fa fa-check" aria-hidden="true"></i> Dégraissage intégral de la cuisine</li> <br>
-                  <li><i class="fa fa-check" aria-hidden="true"></i> Parfum d'ambiance vaporisé dans tout le logement</li> <br>
-                  <li><i class="fa fa-check" aria-hidden="true"></i> Assainissement de la salle de bain et des toilettes</li> <br>
-                  <li><i class="fa fa-check" aria-hidden="true"></i> Aération de l'habitat</li>
-                </ul>
-                <div class="price">
-                  <p class="welcome-price"><strong>29.99 €</strong></p>
-                </div>
-              </div>
-          </div>
-          <div class="card">
-            <%= image_tag('prices/towels.jpeg') %>
-              <div class="card-block">
-                <div class='title-card'>
-                  <h4 class="card-title text-center welcome">Linge de maison</h4>
-                </div>
-                <ul class="text-list">
-                  <li><i class="fa fa-check" aria-hidden="true"></i> Kit "linge de maison" mis à la disposition de vos hôtes
-                  </li> <br>
-                  <li><i class="fa fa-check" aria-hidden="true"></i> Drapage de lit professionnel 
-                  </li> <br>
-                  <li><i class="fa fa-check" aria-hidden="true"></i> Lavage</li> <br>
-                  <li><i class="fa fa-check" aria-hidden="true"></i> Séchage</li> <br>
-                  <li><i class="fa fa-check" aria-hidden="true"></i> Repassage </li> <br> <br>
-                </ul>
-                <div class="price">
-                  <p class="welcome-price"><strong>24.99 €</strong></p>
-                </div>
-              </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class='line'></div>
-
-      
-            <a href="/packs" class="button button-full center tright topmargin footer-stick">
-            Découvrez nos packs clés en main <strong>ici</strong> <i class="icon-caret-right" style="top:4px;"></i>
-            </a> 
-      
+    <div class="flex flex-wrap -m-3"> 
         
-       
+      <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col p-3">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden flex-1 flex flex-col">
+          <div class="bg-cover h-48" style="background-image: url(https://images.unsplash.com/photo-1535450117817-f24e366873b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=711&q=80);"></div>
+          <div class="p-4 flex-1 flex flex-col" style="">
+            <h3 class="mb-4 text-2xl title-card">Accueil de vos hôtes</h3>
+            <div class="mb-4 text-grey-darker text-sm flex-1">
+              <ul class="text-list">
+                  <li>Accueil chaleureux et personnalisé de vos voyageurs
+                  </li> <br>
+                  <li>Présentation de votre logement et de votre quartier
+                  </li> <br>
+                  <li>Etat des lieux d’entrée et de sortie</li> <br>
+                  <li>Fourniture de plans de la ville et d’horaires de bus</li> <br>
+                  <li>Remise et récupération des clés</li> <br>
+                  <li>Panier de bienvenue offert</li>
+              </ul>
+              <div class="price-box">  
+              <p class="price-text">Tarif : 24.99 €</p>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </div>
+      <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col p-3">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden flex-1 flex flex-col">
+          <div class="bg-cover h-48" style="background-image: url(https://images.unsplash.com/photo-1534152519866-4d57e8fc9bf5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=770&q=80);"></div>
+          <div class="p-4 flex-1 flex flex-col" style="">
+            <h3 class="mb-4 text-2xl title-card">Ménage et remise en état</h3>
+            <div class="mb-4 text-grey-darker text-sm flex-1">
+              <ul class="text-list">
+                  <li>Rangement complet de toutes les pièces
+                  </li> <br>
+                  <li>Aspirateur et nettoyage du sol dans tout le logement
+                  </li> <br>
+                  <li>Dégraissage intégral de la cuisine</li> <br>
+                  <li>Parfum d'ambiance vaporisé dans tout le logement</li> <br>
+                  <li>Assainissement de la salle de bain et des toilettes</li> <br>
+                  <li>Aération de l'habitat</li> <br>
+              </ul>  
+              <p class="price-text">Tarif : 29,99 €</p>
+            </div>
+          </div>
+        </div>  
+      </div>  
+      <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col p-3">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden flex-1 flex flex-col">
+          <div class="bg-cover h-48" style="background-image: url(https://images.unsplash.com/photo-1523471826770-c437b4636fe6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);"></div>
+          <div class="p-4 flex-1 flex flex-col" style="">
+            <h3 class="mb-4 text-2xl title-card">Linge de maison</h3>
+            <div class="mb-4 text-grey-darker text-sm flex-1">
+              <ul class="text-list">
+                <li>Kit "linge de maison" mis à la disposition de vos hôtes</li> <br>
+                <li>Drapage de lit professionnel réalisé par nos équipes</li> <br>
+                <li>Lavage du linge de maison au savon de Marseille biologique</li> <br>
+                <li>Séchage</li> <br>
+                <li>Repassage </li> <br>  
+              </ul>
+              <p class="price-text">Tarif : 24.99 €</p>  
+            </div>
+          </div>
+        </div>  
+      </div>  
+        
+    </div>
+
   </div>
 
 </section>
+
+<a href="/packs" class="button button-full center tright topmargin footer-stick">
+            Découvrez nos packs clés en main <strong>ici</strong> <i class="icon-caret-right" style="top:4px;"></i>
+</a> 
