@@ -1,8 +1,67 @@
+<!-- <% content_for :title do %>
+  Mes Biens | BnB Manager
+<% end %>
+
+<section id="property-index-content">
+
+  <div class="content-wrap">
+
+    <div class="container clearfix">
+      <div class="fancy-title title-dotted-border title-center">
+        <h1>Mes Biens</h1>
+      </div>
+      <div class='line'></div>
+
 <% @property.each do |property| %>
-      <tr>
-        <td><%= property.full_address %></td>
-        <%= link_to 'Voir', property %> <br />
-      </tr>
+  <tr>
+    <td><%= property.full_address %></td>
+    <%= link_to 'Voir', property %> <br />
+  </tr>
+  <% if property.images.attached? %>
+    <%= image_tag(property.images.first) %>
+  <% end %>
 <% end %>
 
 <%= link_to 'Ajouter un logement', new_property_path %>
+
+  </div>
+
+</section> -->
+
+
+<% content_for :title do %>
+  Vos Biens | BnB Manager
+<% end %>
+
+<section id="property-content">
+
+  <div class="content-wrap" style="padding-bottom: 0!important;">
+
+    <div class="container clearfix">
+      <div class="fancy-title title-dotted-border title-center">
+        <h1>Vos Biens</h1>
+      </div>
+      <div class='line'></div>
+    
+      <div class="row">
+        <div class="col-lg-6 col-md-8">
+          <% @property.each do |property| %>
+            <% if property.images.attached? %>
+              <%= image_tag(property.images.first) %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="col-lg-auto col-md-8 margin-mobile">    
+          <h4>Adresse du bien</h4>
+          <% @property.each do |property| %>
+            <tr>
+              <td><%= property.full_address.first %></td>
+              <%= link_to 'Voir', property %> <br />
+            </tr>
+          <% end %>
+        </div>    
+  
+
+  </div>
+</section>                
+      
