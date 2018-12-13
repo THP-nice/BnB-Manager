@@ -15,13 +15,13 @@ class TwitterBnb
 
   def nice
     @client.search('#nice').take(10).each do |tweet|
-      @client.update("@#{tweet.user.screen_name}, Vous habitez à Nice ? Vous voulez louez votre bien immobilier sur Airbnb sans avoir à vous en occuper, Bnbmanager le fait pour vous sur http://")
+     @client.update("@#{tweet.user.screen_name}, Vous habitez sur la côte d'azur ? Vous voulez louer votre bien immobilier sur Airbnb sans avoir à vous en occuper, Bnbmanager le fait pour vous sur http://")
     end
   end
 
-  def frenchriviera
-    @client.search('#frenchriviera').take(10).each do |tweet|
-      @client.update("@#{tweet.user.screen_name} Vous habitez à Nice ? Vous voulez louez votre bien immobilier sur Airbnb sans avoir à vous en occuper, Bnbmanager le fait pour vous sur http://")
+  def cotedazur
+    @client.search('#côte d'azur').take(10).each do |tweet|
+      @client.update("@#{tweet.user.screen_name} Vous habitez sur la côte d'azur ? Vous voulez louer votre bien immobilier sur Airbnb sans avoir à vous en occuper, Bnbmanager le fait pour vous sur http://")
     end
   end
 end
