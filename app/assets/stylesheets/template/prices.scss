@@ -1,6 +1,4 @@
 #prices-content {
-  .alpha{ max-width: 1200px; 
-  }
   .card {
     background: #fff;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
@@ -48,10 +46,5 @@
   .price {
     border-top: 1.5px solid rgba(0,0,0,0.1);
     margin-top: 5px;
-  }
-  @media screen and (max-width: 768px) {
-    .margin-mobile {
-      margin-top: 40px;
-    }    
   }
 }
