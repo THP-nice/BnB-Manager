@@ -1,50 +1,27 @@
 #prices-content {
-  .card {
-    background: #fff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    border-radius: 6px;
-    margin-left: 20px;
-    margin-right: 20px;
-    img {
-        width: 100%;
-        border-radius: 3px;
-    }
+  body {
+  background: #eee;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+/*   outline: 1px solid #ccc; */
   }
-  [class*="row"] {
-    margin-bottom: 1em;
-    justify-content: center;
-  }
-  [class*="col-"] {
-    background: #efefef;
-    border: 1px solid #ddd;
-    padding-top: .75rem;
-    padding-bottom: .75rem;
-    width: 100%;
-  }
-  .welcome-price {
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.30em;
-    margin-top: 20px;
-    color: #00d1b2;
-  }
-  .title-card {
-    margin-top: 20px;
-    border-bottom: 1.5px solid rgba(0,0,0,0.1);
+/* Still use global css (not utility css) for base typography etc? */
+  p {
+  margin-bottom: 0.8em;
   }
   ul {
-    list-style-type: none !important;
-    margin-top: 20px;
+    list-style-type: none;
   }
-  h4 {
-    color: #00d1b2;
-    font-size: 1.30em;
+  .price-text {
+    font-weight: bold;
+    font-size: 1.25em;
+    text-align: center;
   }
-  i {
-    margin-left: 8px;
-  }
-  .price {
-    border-top: 1.5px solid rgba(0,0,0,0.1);
-    margin-top: 5px;
+
+  .title-card {
+    color: #00d1b2 !important;
   }
 }
+
+
