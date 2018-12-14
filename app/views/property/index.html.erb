@@ -1,5 +1,5 @@
 <% content_for :title do %>
-  Vos biens | BnB Manager
+Vos biens | BnB Manager
 <% end %>
 
 <section id="property-index-content">
@@ -9,11 +9,15 @@
     <div class="container clearfix">
       <div class="fancy-title title-dotted-border title-center">
         <h1>Vos biens</h1>
+      <% if current_user.is_admin? %>
+        <%= property.user.first_name %> <%= property.user.last_name %>
+      <% end %>  
       </div>
+      
       <div class='line'></div>
 
       <div class="row justify-content-center">
-        <div class="col-lg-6 col-md-8">
+        <div class="col-lg-6 col-md-8">     
           <% @property.each do |property| %>
             <% if property.images.attached? %>
               <%= image_tag(property.images.first) %>
@@ -33,20 +37,27 @@
             <% if property.rooms == 1 %>
               <li class="mb-2"><i class="icon-line2-check"></i><strong>Type</strong> : <%= property.rooms %> pièce</li>
             <% else %>
+              <li class="mb-2"><i class="icon-line2-check"></i><strong>Type</strong> : <%= property.rooms %> pièces</li>
             <% end %>
             <li class="mb-2"><i class="icon-line2-check"></i><strong>Adresse</strong> : <%= property.full_address %></li>
-            <%= link_to 'Voir', property %><br> 
+            <%= link_to property, :class => "button button-mini button-border button-rounded" do %>
+              <i class="fas fa-eye"></i>Voir le bien
+            <% end %>            
+            <%= link_to new_property_path, :class => 'button button-mini button-border button-rounded' do %>
+            <i class="fas fa-home"></i>Ajouter un bien
+          <% end %>  
           </ul>         
         </div>
-
+        
         <div class='line'></div>
-
+        
         <div class="col-lg-6 col-md-8">
         <% end %>   
         </div>
+        
         <div class="col-lg-auto col-md-8 margin-mobile">      
         </div>
-
+      
       </div> <!-- End of row !-->
          
     </div> <!-- End of container clearfix !-->
@@ -54,5 +65,4 @@
   </div> <!-- End of wrap-content !-->
 
 </section> <!-- End of property-index-content section
-
-            <%= link_to 'Ajouter un logement', new_property_path %> !-->
+          
