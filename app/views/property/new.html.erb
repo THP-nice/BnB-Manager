@@ -62,12 +62,6 @@
         <%= form.text_field :country, id: :country, class:"form-control not-dark", :readonly => true %>
       </div>
 
-
-      <div class="col-12 mt-4">
-        <%= form.label 'Images' %>
-        <%= form.file_field :images, multiple: true, :id => 'input-1', class:"file", :data => { :show_preview => "false" } %>
-      </div>
-
       <div class="col-12 mt-4">
         <%= form.label 'Images' %>
         <%= form.file_field :images, multiple: true, :id => 'input-8', class:"file-loading", :data => { :show_preview => "false", :allowed_file_extensions => '[]' } %>
