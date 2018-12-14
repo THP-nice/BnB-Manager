@@ -25,12 +25,12 @@ Vos biens | BnB Manager
           <ul class="iconlist"">
             <h4>Détails du logement</h4>
             <% if current_user.is_admin? %>
-              <%= property.user.first_name %> <%= property.user.last_name %>
+              <li class="mb-2"><i class="icon-line2-check"></i><strong>Proprétaire : </strong><%= property.user.first_name %> <%= property.user.last_name %></li>
             <% end %>  
             <% if property.status == true %>
-              <li class="mb-2"><i class="icon-line2-check" style="color: green"></i><strong>Statut</strong> : Location en cours</li>
+              <li class="mb-2"><i class="icon-line2-check"></i><strong>Statut : </strong><span style="color: green">Location en cours</span></li>
             <% else %>
-              <li class="mb-2"><i class="icon-line2-check" style="color: red"></i><strong>Statut</strong> : Pas de location en cours</li>
+              <li class="mb-2"><i class="icon-line2-check"></i><strong>Statut : </strong><span style="color: red">Pas de location en cours</span></li>
             <% end %>
             <li class="mb-2"><i class="icon-line2-check"></i><strong>Superficie</strong> : <%= property.area %>m2</li>
             <li class="mb-2"><i class="icon-line2-check"></i><strong>Nombre de couchages</strong> : <%= property.sleeps %></li>
