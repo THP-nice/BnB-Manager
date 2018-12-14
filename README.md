@@ -1,24 +1,14 @@
-# README
+# Bnb Manager
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+### Contributions
+Réalisation par la team de Nice :
+- [Nikita Vasilev](https://github.com/Nikitavasilev) : Team Front
+- [Thomas Charvet](https://github.com/TomacTh) : Team Back (master of API)
+- [Nathaniel Debache](https://github.com/Natdenice) : Team Front
+- [Arthur Mansuy](https://github.com/tutus06) : Team Back (mailing + API)
+- [Ysaline Macé](https://github.com/Ysalien) : Team Back (mailing + API)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### Contact
+Notre team à retrouver sur : [THP nice](https://github.com/THP-organization)
