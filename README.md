@@ -12,10 +12,12 @@ Enregistrement / connexion sous la gem devise avec une session utilisateur et un
 Contrôle de l'iban fourni par l'utilisateur via la gem iban-tools.
 Mailer post-inscription via la gem gibbon (Mailchimp).
 Privilège admin : possibilité de changer le statut du bien (location / pas de location en cours) et upload de la facture-client.
+
 - Property (Full CRUD) :
 Création, update et suppression d'un bien par l'utilisateur.
 Remplissage automatique de l'adresse via la gem Google Maps.
 Upload des photos du bien via ActiveStorage (gem Azur Storage).
+
 - Petites features en plus :
 Formulaires de contact (footer + page contact).
 Envoi d'un sms à chaque nouvel ajout de bien par un utilisateur (gem Twilio) à l'équipe de Bnb Manager.
