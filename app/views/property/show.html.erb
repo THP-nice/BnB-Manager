@@ -56,9 +56,9 @@
           <h4>Détails du logement</h4>
           <ul class="iconlist">
             <% if @property.status == true %>
-              <li class="mb-2"><i class="icon-line2-check" style="color: green"></i><strong>Statut</strong> : Location en cours</li>
+              <li class="mb-2"><i class="icon-line2-check"></i><strong>Statut : </strong><span style="color: green;">Location en cours</span></li>
             <% else %>
-              <li class="mb-2"><i class="icon-line2-check" style="color: red"></i><strong>Statut</strong> : Pas de location en cours</li>
+              <li class="mb-2"><i class="icon-line2-check"></i><strong>Statut : </strong><span style="color: red;">Pas de location en cours</span></li>
             <% end %>
             <li class="mb-2"><i class="icon-line2-check"></i><strong>Superficie</strong> : <%= @property.area %>m2</li>
             <li class="mb-2"><i class="icon-line2-check"></i><strong>Nombre de couchages</strong> : <%= @property.sleeps %></li>
@@ -98,9 +98,18 @@
           <%= link_to @property, method: :delete, data: { confirm: 'Cette action est irréversible, en êtes-vous sûr ?' }, :class => 'button button-mini button-border button-rounded button-red' do %>
             <i class="icon-trash2"></i>Supprimer
           <% end %>
+
+        </div>
+      </div>
+      
+      <div class='line'></div>
+
+      <div class="row justify-content-center" style="margin-top: 20px;">
+        <div class="col-lg-4 col-md-5">
+
           <% if @property.documents.attached? %>
-            <%= link_to "Facture", rails_blob_path(@property.documents.first, disposition: "attachment") %>
-          <%end%>
+            <%= link_to "Votre dernière facture", rails_blob_path(@property.documents.first, disposition: "attachment"), :class => 'button button-mini button-border button-rounded' %>
+          <% end %>
 
         </div>
       </div>
