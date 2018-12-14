@@ -16,7 +16,9 @@
 //= require nprogress-turbolinks
 //= require template/jquery
 //= require template/plugins
+//= require template/components/bs-filestyle
 //= require template/functions
+//= require template/components/fileinput
 //= require autocomplete
 //= require_tree .
 
