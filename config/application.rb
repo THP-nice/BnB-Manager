@@ -11,6 +11,8 @@ module BnBManager
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
+    config.serve_static_assets = true
+
     # Mailer configuration (contact form)
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
