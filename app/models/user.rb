@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :properties
 
   after_create :subscribe
-  validates_with IbanValidator
+  validates_with IbanValidator, on: :update
 
   def subscribe
     @list_id = Rails.application.credentials.dig(:gibbonlistid)
