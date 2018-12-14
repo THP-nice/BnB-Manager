@@ -1,7 +1,13 @@
 <% @property.each do |property| %>
   <tr>
+    <td><%= property.user.first_name %> <%= property.user.last_name %> - </td>
     <td><%= property.full_address %></td>
-    <%= link_to 'Voir', property %> <br />
+    <% if property.status == false %>
+      <p style="color: red;">Bien non loué actuellement.</p>
+    <% else %>
+      <p style="color: green;">Ce bien est en location.</p>
+    <% end %>
+    <%= link_to 'Voir', property %><br>
   </tr>
   <% if property.images.attached? %>
     <%= image_tag(property.images.first) %>
