@@ -16,11 +16,10 @@
 //= require nprogress-turbolinks
 //= require jquery
 //= require plugins
-//= require bs-filestyle
 //= require functions
+//= require bs-filestyle
 //= require fileinput
 //= require autocomplete
-//= require_tree .
 
 // Prevent ENTER keypress to submit a web form
 
