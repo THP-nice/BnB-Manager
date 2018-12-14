@@ -68,19 +68,28 @@
 
         <div class="col-12 mt-4">
           <%= form.label 'Images' %>
-          <%= form.file_field :images, multiple: true, class:"form-control not-dark" %>
+          <%= form.file_field :images, multiple: true, :id => 'input-8', class:"file-loading", :data => { :show_preview => "false", :allowed_file_extensions => '[]' } %>
         </div>
 
         <% if current_user && current_user.admin %>
-        <div class="col-12 mt-4">
-          <%= form.label 'Statut' %>
-          <%= form.check_box :status, class:"form-control not-dark" %>
-        </div>
-        <div class="col-12 mt-4">
-          <%= form.label 'Documents' %>
-          <%= form.file_field :documents, multiple: true, class:"form-control not-dark" %>
-           
-        </div>
+          
+          <div class="col-12 mt-4">
+            <%= form.label 'Documents' %>
+            <%= form.file_field :documents, multiple: true, :id => 'input-1', class:"file", :data => { :show_preview => "false" } %>
+          </div>
+
+          <div class="col-12 mt-4">
+            <div class="form-check">
+              <%= form.check_box :status, class:"form-check-input" %>
+              <%= form.label 'Statut', class: "form-check-label" %>            
+            </div>
+            <% if @property.status == false %>
+              <p style="color: red;">Bien non loué actuellement.</p>
+            <% else %>
+              <p style="color: green;">Ce bien est en location.</p>
+            <% end %>
+          </div>
+
         <% end %>
 
         <%= form.hidden_field :user_id, value: current_user.id %>
