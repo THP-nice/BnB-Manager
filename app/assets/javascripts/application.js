@@ -14,11 +14,11 @@
 //= require activestorage
 //= require nprogress
 //= require nprogress-turbolinks
-//= require template/jquery
-//= require template/plugins
-//= require template/components/bs-filestyle
-//= require template/functions
-//= require template/components/fileinput
+//= require jquery
+//= require plugins
+//= require bs-filestyle
+//= require functions
+//= require fileinput
 //= require autocomplete
 //= require_tree .
 
