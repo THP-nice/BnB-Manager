@@ -6,7 +6,7 @@
   <div class="card-header py-3 center">
     <h2 class="mb-0 t400 text-center center">Editer mon compte</h2>
   </div>
-  
+
   <div class="card-body divcenter py-5" style="max-width: 70%;">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'nobottommargin row' }) do |f| %>
       <%= devise_error_messages! %>
@@ -34,6 +34,11 @@
       <div class="col-12 mt-4">
         <%= f.label :email %><br />
         <%= f.email_field :email, autocomplete: "email", class:"form-control not-dark" %>
+      </div>
+
+      <div class="col-12 mt-4">
+        <%= f.label :iban %><br />
+        <%= f.text_field :iban, autocomplete: "IBAN", class:"form-control not-dark" %>
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
