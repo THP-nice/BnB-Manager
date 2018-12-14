@@ -9,9 +9,6 @@ Vos biens | BnB Manager
     <div class="container clearfix">
       <div class="fancy-title title-dotted-border title-center">
         <h1>Vos biens</h1>
-      <% if current_user.is_admin? %>
-        <%= property.user.first_name %> <%= property.user.last_name %>
-      <% end %>  
       </div>
       
       <div class='line'></div>
@@ -27,6 +24,9 @@ Vos biens | BnB Manager
         <div class="col-lg-auto col-md-8 margin-mobile">  
           <ul class="iconlist"">
             <h4>Détails du logement</h4>
+            <% if current_user.is_admin? %>
+              <%= property.user.first_name %> <%= property.user.last_name %>
+            <% end %>  
             <% if property.status == true %>
               <li class="mb-2"><i class="icon-line2-check" style="color: green"></i><strong>Statut</strong> : Location en cours</li>
             <% else %>
