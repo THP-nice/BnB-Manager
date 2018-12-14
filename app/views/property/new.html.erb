@@ -62,9 +62,15 @@
         <%= form.text_field :country, id: :country, class:"form-control not-dark", :readonly => true %>
       </div>
 
+
       <div class="col-12 mt-4">
         <%= form.label 'Images' %>
-        <%= form.file_field :images, multiple: true, class:"form-control not-dark" %>
+        <%= form.file_field :images, multiple: true, :id => 'input-1', class:"file", :data => { :show_preview => "false" } %>
+      </div>
+
+      <div class="col-12 mt-4">
+        <%= form.label 'Images' %>
+        <%= form.file_field :images, multiple: true, :id => 'input-8', class:"file-loading", :data => { :show_preview => "false", :allowed_file_extensions => '[]' } %>
       </div>
 
       <%= form.hidden_field :user_id, value: current_user.id %>
@@ -82,5 +88,5 @@
   </div>
 
 </div>
-
+  
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=<%=Rails.application.credentials.GOOGLE_API_KEY%>"></script>
