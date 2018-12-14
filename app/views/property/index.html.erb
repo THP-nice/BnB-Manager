@@ -1,67 +1,58 @@
-<!-- <% content_for :title do %>
-  Mes Biens | BnB Manager
+<% content_for :title do %>
+  Vos biens | BnB Manager
 <% end %>
 
 <section id="property-index-content">
-
-  <div class="content-wrap">
-
-    <div class="container clearfix">
-      <div class="fancy-title title-dotted-border title-center">
-        <h1>Mes Biens</h1>
-      </div>
-      <div class='line'></div>
-
-<% @property.each do |property| %>
-  <tr>
-    <td><%= property.full_address %></td>
-    <%= link_to 'Voir', property %> <br />
-  </tr>
-  <% if property.images.attached? %>
-    <%= image_tag(property.images.first) %>
-  <% end %>
-<% end %>
-
-<%= link_to 'Ajouter un logement', new_property_path %>
-
-  </div>
-
-</section> -->
-
-
-<% content_for :title do %>
-  Vos Biens | BnB Manager
-<% end %>
-
-<section id="property-content">
 
   <div class="content-wrap" style="padding-bottom: 0!important;">
 
     <div class="container clearfix">
       <div class="fancy-title title-dotted-border title-center">
-        <h1>Vos Biens</h1>
+        <h1>Vos biens</h1>
       </div>
       <div class='line'></div>
-    
-      <div class="row">
-        <div class="col-lg-6 col-md-8">
+
+      <div class="row justify-content-center">
+        <div class="col-4">
           <% @property.each do |property| %>
             <% if property.images.attached? %>
               <%= image_tag(property.images.first) %>
             <% end %>
-          <% end %>
         </div>
-        <div class="col-lg-auto col-md-8 margin-mobile">    
-          <h4>Adresse du bien</h4>
-          <% @property.each do |property| %>
-            <tr>
-              <td><%= property.full_address.first %></td>
-              <%= link_to 'Voir', property %> <br />
-            </tr>
-          <% end %>
-        </div>    
-  
+        
+        <div class="col-8">  
+          <ul class="iconlist"">
+            <h4>Détails du logement</h4>
+            <% if property.status == true %>
+              <li class="mb-2"><i class="icon-line2-check" style="color: green"></i><strong>Statut</strong> : Location en cours</li>
+            <% else %>
+              <li class="mb-2"><i class="icon-line2-check" style="color: red"></i><strong>Statut</strong> : Pas de location en cours</li>
+            <% end %>
+            <li class="mb-2"><i class="icon-line2-check"></i><strong>Superficie</strong> : <%= property.area %>m2</li>
+            <li class="mb-2"><i class="icon-line2-check"></i><strong>Nombre de couchages</strong> : <%= property.sleeps %></li>
+            <% if property.rooms == 1 %>
+              <li class="mb-2"><i class="icon-line2-check"></i><strong>Type</strong> : <%= property.rooms %> pièce</li>
+            <% else %>
+            <% end %>
+            <li class="mb-2"><i class="icon-line2-check"></i><strong>Adresse</strong> : <%= property.full_address %></li>
+            <%= link_to 'Voir', property %><br> 
+          </ul>         
+        </div>
 
-  </div>
-</section>                
-      
+        <div class='line'></div>
+
+        <div class="col-4">
+        <% end %>   
+        </div>
+        <div class="col-8">      
+        </div>
+
+      </div> <!-- End of row !-->
+         
+    </div> <!-- End of container clearfix !-->
+  
+  </div> <!-- End of wrap-content !-->
+
+</section> <!-- End of property-index-content section
+
+            <%= link_to 'Ajouter un logement', new_property_path %> !-->
