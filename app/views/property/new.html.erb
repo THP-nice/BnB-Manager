@@ -2,83 +2,91 @@
   Votre logement | BnB Manager
 <% end %>
 
-<div class="card divcenter mt-4" style="max-width: 540px;">
-  <div class="card-header py-3 center">
-    <h2 class="mb-0 t400 text-center center">Saisissez votre logement</h2>
+<section>
+  <div class="content-wrap">
+    <div class="container clearfix">
+
+      <div class="card divcenter mt-4" style="max-width: 540px;">
+        <div class="card-header py-3 center">
+          <h2 class="mb-0 t400 text-center center">Saisissez votre logement</h2>
+        </div>
+
+        <div class="card-body divcenter py-5" style="max-width: 70%;">
+          <%= form_for @property, url: { action: 'create'}, html: { class: 'nobottommargin row' } do |form| %>
+
+            <div class="col-12">
+              <%= form.label 'Adresse' %>
+              <%= form.text_field :full_address, placeholder: "Entrez votre adresse", id: :autocomplete_address, class:"form-control not-dark" %>
+            </div>
+
+            <div class="col-12 mt-4">
+              <%= form.label 'Complément d\'adresse' %>
+              <%= form.text_area :additional_content, placeholder: "Nom du bâtiment, résidence, étage, etc.", class:"form-control not-dark" %>
+            </div>
+
+            <div class="col-12 mt-4">
+              <%= form.number_field :area, class:"form-control not-dark", placeholder: "Superficie en m2*" %>
+            </div>
+
+            <div class="col-12 mt-4">
+              <%= form.number_field :sleeps, class:"form-control not-dark", placeholder: "Nombre de couchage*" %>
+            </div>
+
+            <div class="col-12 mt-4">
+              <%= form.number_field :rooms, class:"form-control not-dark", placeholder: "Nombre de pièces*" %>
+            </div>
+
+            <div class="col-12 mt-4">
+              <%= form.label 'N° de voie' %>
+              <%= form.text_field :street_number, id: :street_number, class:"form-control not-dark", :readonly => true %>
+            </div>
+
+            <div class="col-12 mt-4">
+              <%= form.label 'Nom de la voie' %>
+              <%= form.text_field :route, id: :route, class:"form-control not-dark", :readonly => true %>
+            </div>
+
+            <div class="col-12 mt-4">
+              <%= form.label 'Ville' %>
+              <%= form.text_field :locality, id: :locality, class:"form-control not-dark", :readonly => true %>
+            </div>
+
+            <div class="col-12 mt-4">
+              <%= form.label 'Région' %>
+              <%= form.text_field :administrative_area_level_1, id: :administrative_area_level_1, class:"form-control not-dark", :readonly => true %>
+            </div>
+
+            <div class="col-12 mt-4">
+              <%= form.label 'Code postal' %>
+              <%= form.number_field :postal_code, id: :postal_code, class:"form-control not-dark", :readonly => true %>
+            </div>
+
+            <div class="col-12 mt-4">
+              <%= form.label 'Pays' %>
+              <%= form.text_field :country, id: :country, class:"form-control not-dark", :readonly => true %>
+            </div>
+
+            <div class="col-12 mt-4">
+              <%= form.label 'Images' %>
+              <%= form.file_field :images, multiple: true, :id => 'input-8', class:"file-loading", :data => { :show_preview => "false", :allowed_file_extensions => '[]' } %>
+            </div>
+
+            <%= form.hidden_field :user_id, value: current_user.id %>
+
+            <div class="col-12 mt-4">
+              <%= form.submit "Ajouter", class: "button btn-block nomargin" %>
+            </div>
+
+          <%end%>
+        </div>
+
+        <div class="card-footer py-4 center">
+          <h3 class="t400 text-center center">Modifier mon profil</h3>
+          <%= link_to 'Retour', edit_user_registration_path %>
+        </div>
+
+      </div>
+
+    </div>
   </div>
-
-  <div class="card-body divcenter py-5" style="max-width: 70%;">
-    <%= form_for @property, url: { action: 'create'}, html: { class: 'nobottommargin row' } do |form| %>
-
-      <div class="col-12">
-        <%= form.label 'Adresse' %>
-        <%= form.text_field :full_address, placeholder: "Entrez votre adresse", id: :autocomplete_address, class:"form-control not-dark" %>
-      </div>
-
-      <div class="col-12 mt-4">
-        <%= form.label 'Complément d\'adresse' %>
-        <%= form.text_area :additional_content, placeholder: "Nom du bâtiment, résidence, étage, etc.", class:"form-control not-dark" %>
-      </div>
-
-      <div class="col-12 mt-4">
-        <%= form.number_field :area, class:"form-control not-dark", placeholder: "Superficie en m2*" %>
-      </div>
-
-      <div class="col-12 mt-4">
-        <%= form.number_field :sleeps, class:"form-control not-dark", placeholder: "Nombre de couchage*" %>
-      </div>
-
-      <div class="col-12 mt-4">
-        <%= form.number_field :rooms, class:"form-control not-dark", placeholder: "Nombre de pièces*" %>
-      </div>
-
-      <div class="col-12 mt-4">
-        <%= form.label 'N° de voie' %>
-        <%= form.text_field :street_number, id: :street_number, class:"form-control not-dark", :readonly => true %>
-      </div>
-
-      <div class="col-12 mt-4">
-        <%= form.label 'Nom de la voie' %>
-        <%= form.text_field :route, id: :route, class:"form-control not-dark", :readonly => true %>
-      </div>
-
-      <div class="col-12 mt-4">
-        <%= form.label 'Ville' %>
-        <%= form.text_field :locality, id: :locality, class:"form-control not-dark", :readonly => true %>
-      </div>
-
-      <div class="col-12 mt-4">
-        <%= form.label 'Région' %>
-        <%= form.text_field :administrative_area_level_1, id: :administrative_area_level_1, class:"form-control not-dark", :readonly => true %>
-      </div>
-
-      <div class="col-12 mt-4">
-        <%= form.label 'Code postal' %>
-        <%= form.number_field :postal_code, id: :postal_code, class:"form-control not-dark", :readonly => true %>
-      </div>
-
-      <div class="col-12 mt-4">
-        <%= form.label 'Pays' %>
-        <%= form.text_field :country, id: :country, class:"form-control not-dark", :readonly => true %>
-      </div>
-
-      <div class="col-12 mt-4">
-        <%= form.label 'Images' %>
-        <%= form.file_field :images, multiple: true, :id => 'input-8', class:"file-loading", :data => { :show_preview => "false", :allowed_file_extensions => '[]' } %>
-      </div>
-
-      <%= form.hidden_field :user_id, value: current_user.id %>
-
-      <div class="col-12 mt-4">
-        <%= form.submit "Ajouter", class: "button btn-block nomargin" %>
-      </div>
-
-    <%end%>
-  </div>
-
-  <div class="card-footer py-4 center">
-    <h3 class="t400 text-center center">Modifier mon profil</h3>
-    <%= link_to 'Retour', edit_user_registration_path %>
-  </div>
-
-</div>
+</section>
