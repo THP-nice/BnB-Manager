@@ -12,11 +12,11 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require nprogress
-//= require nprogress-turbolinks
 //= require jquery
 //= require plugins
 //= require functions
+//= require nprogress
+//= require nprogress-turbolinks
 //= require bs-filestyle
 //= require fileinput
 //= require autocomplete
