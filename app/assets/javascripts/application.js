@@ -17,9 +17,7 @@
 //= require jquery
 //= require plugins
 //= require functions
-//= require bs-filestyle
-//= require fileinput
-//= require autocomplete
+
 
 // Prevent ENTER keypress to submit a web form
 
