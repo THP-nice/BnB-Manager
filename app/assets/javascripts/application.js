@@ -23,9 +23,14 @@
 //= require_tree .
 
 // Prevent ENTER keypress to submit a web form
-
 $("form").on("keypress", function (e) {
   if (e.keyCode == 13) {
     return false;
   }
+});
+
+
+// 3 seconds flash autoclose
+$(document).ready(function () {
+  $(".alert-quick").delay(1000).fadeOut(3000);
 });
