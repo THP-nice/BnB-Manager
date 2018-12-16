@@ -2,9 +2,8 @@ require 'iban-tools'
 
 class IbanValidator < ActiveModel::Validator
   def validate(record)
-    iban = IBANTools::IBAN.new(record) # Create a new Iban
-    unless IBANTools::IBAN.valid?(record.iban) # Check if the iban is valid or not
-      record.errors.add :iban, record.errors.generate_message(:iban, :invalid)
+    unless record.account.blank? or IBANTools::IBAN.valid? record.account
+      record.errors[:account] << ' error : ce numéro est invalide.'
     end
   end
 end
