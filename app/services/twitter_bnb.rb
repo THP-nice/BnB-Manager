@@ -15,13 +15,13 @@ class TwitterBnb
 
   def nice
     @client.search('#nice').take(10).each do |tweet|
-     @client.update("@#{tweet.user.screen_name}, Vous habitez sur la Côte d'Azur ? Vous voulez louer votre bien immobilier sur Airbnb sans avoir à vous en occuper, Bnbmanager le fait pour vous sur http://")
+     @client.update("@#{tweet.user.screen_name}, Vous habitez sur la Côte d'Azur ? Vous voulez louer votre bien immobilier sur Airbnb sans avoir à vous en occuper, Bnbmanager le fait pour vous sur https://bnbmanager.herokuapp.com/")
     end
   end
 
   def cotedazur
     @client.search('#cotedazur').take(10).each do |tweet|
-      @client.update("@#{tweet.user.screen_name} Vous habitez sur la Côte d'Azur ? Vous voulez louer votre bien immobilier sur Airbnb sans avoir à vous en occuper, Bnbmanager le fait pour vous sur http://")
+      @client.update("@#{tweet.user.screen_name} Vous habitez sur la Côte d'Azur ? Vous voulez louer votre bien immobilier sur Airbnb sans avoir à vous en occuper, Bnbmanager le fait pour vous sur https://bnbmanager.herokuapp.com/")
     end
   end
 end
