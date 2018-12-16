@@ -2,20 +2,28 @@
   Mon compte bancaire | BnB Manager
 <% end %>
 
-<div class="card divcenter mt-4" style="max-width: 540px;">
-  <div class="card-header py-3 center">
-    <h2 class="mb-0 t400 text-center center">Mon compte bancaire</h2>
-  </div>
+<section>
+  <div class="content-wrap">
+    <div class="container clearfix">
 
-  <div class="card-footer py-4 center">
-    <h3 class="t400 text-center center">Iban</h3>
-    <% if @iban === nil %>
-      <p class="mb-3">Pour facilité vos démarches, ajouter mon Iban</p>
-      <%= link_to "Ajouter", new_iban_path %><br />
-    <% else %>
-      <p> <%= @iban.account %></p>
-      <%= link_to "Modifier", edit_iban_path(@iban.id) %><br />
-    <% end %>
-  </div>
+      <div class="card divcenter mt-4" style="max-width: 540px;">
+        <div class="card-header py-3 center">
+          <h2 class="mb-0 t400 text-center center">Mon compte bancaire</h2>
+        </div>
 
-</div>
+        <div class="card-footer py-4 center">
+          <h3 class="t400 text-center center">Iban</h3>
+          <% if @iban === nil %>
+            <p class="mb-3">Pour facilité vos démarches, ajouter mon Iban</p>
+            <%= link_to "Ajouter", new_iban_path %><br />
+          <% else %>
+            <p> <%= @iban.account %></p>
+            <%= link_to "Modifier", edit_iban_path(@iban.id) %><br />
+          <% end %>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
