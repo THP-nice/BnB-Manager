@@ -39,7 +39,11 @@
                   <li><%= link_to "Editer mon profil", edit_user_registration_path, class:"navbar-item" %></li>
                   <li><%= link_to "Ajouter un bien", new_property_path, class:"navbar-item" %></li>
                   <li><%= link_to "Mes biens", property_index_path, class:"navbar-item" %></li>
-                  <li><%= link_to "Mon compte bancaire", iban_index_path, class:"navbar-item" %></li>
+                  <% if current_user.iban.present? %>
+                    <li><%= link_to "Mes paiements", iban_index_path, class:"navbar-item" %></li>
+                  <% else %>
+                    <li><%= link_to "Mes paiements", new_iban_path, class: "navbar-item" %></li> 
+                  <% end %>
                   <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class:"navbar-item" %></li>
                 </ul>
               </li>
