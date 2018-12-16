@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :properties
+  has_one :iban
 
   after_create :subscribe
 
