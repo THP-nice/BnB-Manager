@@ -1,5 +1,6 @@
 class Iban < ApplicationRecord
   belongs_to :user
+  validates :user_id, uniqueness: true
   validates_with IbanValidator
 
   before_save :iban_account
