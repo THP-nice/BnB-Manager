@@ -33,7 +33,7 @@ class PropertyController < ApplicationController
     if current_user.id == Property.find(params[:id]).user_id || current_user.admin
       @property = Property.find(params[:id])
     else
-      redirect_to property_index_path, notice: "Pas touche !"
+      redirect_to property_index_path, notice: "Vous n'avez pas les droits requis pour accéder à cette page."
     end
   end
 
@@ -41,7 +41,7 @@ class PropertyController < ApplicationController
     if current_user.id == Property.find(params[:id]).user_id || current_user.admin
       @property = Property.find(params[:id])
     else
-      redirect_to property_index_path, notice: "Pas touche"
+      redirect_to property_index_path, notice: "Vous n'avez pas les droits requis pour accéder à cette page."
     end
   end
 
@@ -62,7 +62,7 @@ class PropertyController < ApplicationController
     @property = Property.find(params[:id])
     @property.destroy
       respond_to do |format|
-        format.html { redirect_to property_index_path, notice: 'Logement supprimé.' }
+        format.html { redirect_to property_index_path, notice: "Logement supprimé." }
         format.json { head :no_content }
       end
   end

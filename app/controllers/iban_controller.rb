@@ -33,16 +33,16 @@ class IbanController < ApplicationController
     if current_user.id == Iban.find(params[:id]).user_id
       @iban = Iban.find(params[:id])
     else
-      redirect_to iban_index_path, notice: "Oups, cet accès vous est interdit."
+      redirect_to iban_index_path, notice: "Vous n'avez pas les droits requis pour accéder à cette page."
     end
   end
 
   def update
     @iban = Iban.find(params[:id])
       if @iban.update(iban_params)
-        redirect_to iban_index_path, notice: 'Iban enregistré.'
+        redirect_to iban_index_path, notice: "Iban enregistré."
       else
-        render :edit, notice: 'Une erreur est survenue lors de la saisie, veuillez réessayer.'
+        render :edit, notice: "Une erreur est survenue lors de la saisie, veuillez réessayer."
       end
   end
 
