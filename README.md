@@ -26,7 +26,7 @@ Mailer : Formulaires de contact du visiteur ou de l'utilisateur dans le footer e
 Twilio : Envoi d'un sms à chaque nouvel ajout de bien par un utilisateur à l'équipe de Bnb Manager.
 > File : *app/controllers/property_controller.rb* + *config/initializers/twilio.rb* + *app/services/twilio_text_messenger.rb*
 
-Twitter : Bot automatique pour la promotion du site naissant.
+Twitter : Bot automatique pour la promotion du site naissant sur le compte [06-south](https://twitter.com/06south)
 > File : *app/services/twitter_bnb.rb*
 
 ### Contributions
