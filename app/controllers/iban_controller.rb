@@ -2,7 +2,12 @@ class IbanController < ApplicationController
     before_action :authenticate_user!
 
   def new
-    @iban = Iban.new
+    if current_user.iban == nil
+      @iban = Iban.new
+    else
+      redirect_to iban_index_path
+    end
+
   end
 
   def create
@@ -15,10 +20,12 @@ class IbanController < ApplicationController
   end
 
   def index
-    if current_user.id == Iban.last.user_id
-      @iban = Iban.last
+    if current_user.iban == nil
+      redirect_to new_iban_url
+    elsif current_user && current_user.admin
+      @iban = Iban.all
     else
-      redirect_to iban_index_path, notice: "Oups, cet accès vous est interdit."
+      @iban = current_user.iban
     end
   end
 

@@ -13,9 +13,12 @@
 
         <div class="card-footer py-4 center">
           <h3 class="t400 text-center center">Iban</h3>
-          <% if @iban === nil %>
-            <p class="mb-3">Pour facilité vos démarches, ajouter mon Iban</p>
-            <%= link_to "Ajouter", new_iban_path %><br />
+          <% if current_user && current_user.admin %>
+            <% @iban.each do |iban| %>
+              <%= iban.user.email %>
+              <%= iban.account %>
+              <%= link_to "Modifier", edit_iban_path(iban.id) %><br />
+            <% end %>
           <% else %>
             <p> <%= @iban.account %></p>
             <%= link_to "Modifier", edit_iban_path(@iban.id) %><br />
