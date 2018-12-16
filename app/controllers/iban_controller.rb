@@ -5,7 +5,7 @@ class IbanController < ApplicationController
     if current_user.iban == nil
       @iban = Iban.new
     else
-      redirect_to iban_index_path
+      redirect_to iban_index_path, notice: "Iban déjà éxistant."
     end
 
   end
@@ -13,15 +13,15 @@ class IbanController < ApplicationController
   def create
     @iban = Iban.new(iban_params)
       if @iban.save
-        redirect_to iban_index_path, notice: 'Iban enregistré.'
+        redirect_to iban_index_path, notice: "Iban enregistré."
       else
-        render :new, notice: 'Une erreur est survenue lors de la saisie, veuillez réessayer.'
+        render :new, notice: "Une erreur est survenue lors de la saisie, veuillez réessayer."
       end
   end
 
   def index
     if current_user.iban == nil
-      redirect_to new_iban_url
+      redirect_to new_iban_url, notice: "Aucun iban associé à ce compte."
     elsif current_user && current_user.admin
       @iban = Iban.all
     else

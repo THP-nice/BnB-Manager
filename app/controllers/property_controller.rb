@@ -10,7 +10,7 @@ class PropertyController < ApplicationController
     respond_to do |format|
       if @property.save
         TwilioTextMessenger.new(@message).call
-        format.html { redirect_to @property, notice: 'Logement ajouté.' }
+        format.html { redirect_to @property, notice: "Logement ajouté." }
         format.json { render :index, status: :created, location: @property }
       else
         format.html { render :new }
@@ -20,7 +20,9 @@ class PropertyController < ApplicationController
   end
 
   def index
-    if current_user && current_user.admin
+    if current_user.properties == []
+      redirect_to new_property_path, notice: "Aucun bien associé à ce compte."
+    elsif current_user && current_user.admin
       @property = Property.all
     else
       @property = current_user.properties
@@ -31,7 +33,7 @@ class PropertyController < ApplicationController
     if current_user.id == Property.find(params[:id]).user_id || current_user.admin
       @property = Property.find(params[:id])
     else
-      redirect_to property_index_path, notice: "Pas touche"
+      redirect_to property_index_path, notice: "Pas touche !"
     end
   end
 
