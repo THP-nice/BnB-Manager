@@ -5,7 +5,7 @@ class IbanController < ApplicationController
     if current_user.iban == nil
       @iban = Iban.new
     else
-      redirect_to iban_index_path, notice: "Iban déjà éxistant."
+      redirect_to iban_index_path, notice: "Iban déjà existant."
     end
 
   end
