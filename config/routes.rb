@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :iban, except: [:destroy, :index]
   resources :property
 
   devise_for :users, controllers: {
@@ -9,6 +8,8 @@ Rails.application.routes.draw do
   }
 
   resources :charges
+
+  resources :iban, except: [:destroy, :index]
 
   get 'contact-me', to: 'static_pages#new', as: 'new_message'
   post 'contact-me', to: 'static_pages#create', as: 'create_message'
