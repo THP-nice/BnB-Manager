@@ -1,0 +1,28 @@
+<div class="card divcenter mt-4" style="max-width: 540px;">
+  <div class="card-header py-3 center">
+    <h2 class="mb-0 t400 text-center center">Ajouter votre Iban</h2>
+  </div>
+
+<div class="card-body divcenter py-5" style="max-width: 70%;">
+  <%= form_for @iban, url: { action: 'create' }, html: { class: 'nobottommargin row' } do |f|%>
+    <% @iban.errors.each do |attr, msg| %>
+    <li>
+      <%= @iban.errors.full_messages_for(attr).first if @iban.errors[attr].first == msg %>
+    </li>
+    <% end %>
+
+    <%= f.hidden_field :user_id, value: current_user.id %>
+
+    <div class="col-12 mt-4">
+      <%= f.label :iban %><br />
+      <%= f.text_field :account, class:"form-control not-dark" %>
+    </div>
+
+    <div class="col-12 mt-4">
+      <%= f.submit "Créer", class:"button btn-block nomargin" %>
+    </div>
+
+  <% end %>
+</div>
+
+</div>

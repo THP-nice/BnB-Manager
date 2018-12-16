@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :iban, except: [:destroy, :index]
   resources :property
 
   devise_for :users, controllers: {

@@ -5,7 +5,7 @@
 <section>
   <div class="content-wrap">
     <div class="container clearfix">
-      
+
       <div class="card divcenter mt-4" style="max-width: 540px;">
         <div class="card-header py-3 center">
           <h2 class="mb-0 t400 text-center center">Editer mon compte</h2>
@@ -74,14 +74,20 @@
           <% end %>
         </div>
 
-        <div class="card-footer py-4 center">
-          <h3 class="t400 text-center center">Annuler mon compte</h3>
-          <p class="mb-3">Pas convaincu par nos services? <%= button_to "Annuler mon compte", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-outline-danger" %></p>
-          <%= link_to "Retour", :back %>
-        </div>
+  <div class="card-footer py-4 center">
+    <h3 class="t400 text-center center">Iban</h3>
+    <p class="mb-3">Pour facilité vos démarches, ajouter votre Iban</p>
+    <%= link_to "Ajouter mon Iban", new_iban_path %>
+  </div>
+
+  <div class="card-footer py-4 center">
+    <h3 class="t400 text-center center">Annuler mon compte</h3>
+    <p class="mb-3">Pas convaincu par nos services? <%= button_to "Annuler mon compte", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-outline-danger" %></p>
+    <%= link_to "Retour", :back %>
+  </div>
 
       </div>
-      
+
     </div>
   </div>
 </section>
