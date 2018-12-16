@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :charges
 
-  resources :iban, except: [:destroy, :index]
+  resources :iban, except: [:show, :destroy]
 
   get 'contact-me', to: 'static_pages#new', as: 'new_message'
   post 'contact-me', to: 'static_pages#create', as: 'create_message'
